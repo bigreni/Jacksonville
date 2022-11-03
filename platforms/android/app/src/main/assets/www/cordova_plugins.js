@@ -103,6 +103,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     }
   ];
   module.exports.metadata = {
+    "cordova-admobsdk": "8.13.0",
     "cordova-plugin-extension": "1.6.0",
     "cordova-plugin-admobpro": "8.13.1",
     "cordova-plugin-dialogs": "2.0.2",
@@ -113,7 +114,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-support-android-plugin": "2.0.4",
     "cordova-plugin-idfa": "2.1.0",
     "cordova-plugin-inappbrowser": "5.0.0",
-    "cordova-plugin-wkwebview-file-xhr": "3.1.0",
-    "cordova-admobsdk": "8.13.0"
+    "cordova-plugin-wkwebview-file-xhr": "3.1.0"
   };
 });

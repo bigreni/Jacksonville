@@ -2,7 +2,7 @@
         if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
             document.addEventListener('deviceready', checkFirstUse, false);
         } else {
-            checkFirstUse();
+            notFirstUse();
         }
     }
 
@@ -38,13 +38,17 @@
     function registerAdEvents() {
         // new events, with variable to differentiate: adNetwork, adType, adEvent
         document.addEventListener('onAdFailLoad', function (data) {
-            document.getElementById('screen').style.display = 'none';     
+            document.getElementById("screen").style.display = 'none';     
         });
-        document.addEventListener('onAdLoaded', function (data) { });
+        document.addEventListener('onAdLoaded', function (data) {
+            document.getElementById("screen").style.display = 'none';     
+        });
         document.addEventListener('onAdPresent', function (data) { });
-        document.addEventListener('onAdLeaveApp', function (data) { });
-        document.addEventListener('onAdDismiss', function (data) { 
-            document.getElementById('screen').style.display = 'none';     
+        document.addEventListener('onAdLeaveApp', function (data) { 
+            document.getElementById("screen").style.display = 'none';     
+        });
+        document.addEventListener('onAdDismiss', function (data) {
+           document.getElementById("screen").style.display = 'none';     
         });
     }
 
@@ -53,24 +57,68 @@
     }
 
     function loadInterstitial() {
-        AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: true, autoShow: true });
+        if ((/(android|windows phone)/i.test(navigator.userAgent))) {
+            AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: true, autoShow: false });
+            //document.getElementById("screen").style.display = 'none';     
+        } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))) {
+            AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: true, autoShow: false });
+            //document.getElementById("screen").style.display = 'none';     
+        } else
+        {
+            document.getElementById("screen").style.display = 'none';     
+        }
     }
 
    function checkFirstUse()
     {
-        $('#simplemenu').sidr();
         $("span").remove();
         $(".dropList").select2();
-
-        //initApp();
-        //askRating();
-        document.getElementById('screen').style.display = 'none';     
+        initApp();
+        checkPermissions();
+        askRating();
+        // document.getElementById('screen').style.display = 'none';     
     }
 
+    function notFirstUse()
+    {
+        $("span").remove();
+        $(".dropList").select2();
+        document.getElementById("screen").style.display = 'none';     
+    }
+
+function loadFaves()
+{
+    showAd();
+    window.location = "Favorites.html";
+}
+
+function checkPermissions(){
+    const idfaPlugin = cordova.plugins.idfa;
+
+    idfaPlugin.getInfo()
+        .then(info => {
+            if (!info.trackingLimited) {
+                return info.idfa || info.aaid;
+            } else if (info.trackingPermission === idfaPlugin.TRACKING_PERMISSION_NOT_DETERMINED) {
+                return idfaPlugin.requestPermission().then(result => {
+                    if (result === idfaPlugin.TRACKING_PERMISSION_AUTHORIZED) {
+                        return idfaPlugin.getInfo().then(info => {
+                            return info.idfa || info.aaid;
+                        });
+                    }
+                });
+            }
+        });
+}
+ 
+    
 function askRating()
 {
-  AppRate.preferences = {
-  openStoreInApp: true,
+    cordova.plugins.AppRate.setPreferences = {
+        reviewType: {
+            ios: 'AppStoreReview',
+            android: 'InAppBrowser'
+            },
   useLanguage:  'en',
   usesUntilPrompt: 10,
   promptAgainForEachNewVersion: true,
@@ -83,6 +131,18 @@ function askRating()
 AppRate.promptForRating(false);
 }
 
+function showAd()
+{
+    document.getElementById("screen").style.display = 'block';     
+    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
+        AdMob.isInterstitialReady(function(isready){
+            if(isready) 
+                AdMob.showInterstitial();
+        });
+    }
+    document.getElementById("screen").style.display = 'none'; 
+}
+
 
 function loadDirections() {
     $('.js-next-bus-results').html('').hide(); // reset output container's html
@@ -93,9 +153,9 @@ function loadDirections() {
     $.ajax(
           {
               type: "GET",
-              url: "http://webservices.nextbus.com/service/publicJSONFeed",
+              url: "https://retro.umoiq.com/service/publicJSONFeed",
               data: "command=routeConfig&a=jtafla&r=" + $("#routeSelect").val(),
-              contentType: "application/json;	charset=utf-8",
+              //contentType: "application/json;	charset=utf-8",
               dataType: "json",
               success: function (msg) {
                   if (msg == null || msg.length == 0) {
@@ -107,11 +167,11 @@ function loadDirections() {
                   $(list).append($("<option disabled/>").val("0").text("- Select Direction -"));
                   var numDirections = msg['route'].direction;
                   if (numDirections.length == null) {
-                      $(list).append($("<option />").val(numDirections.name).text(numDirections.name));
+                      $(list).append($("<option />").val(numDirections.name).text(numDirections.title));
                   }
                   else {
                       $.each(numDirections, function (index, item) {
-                          $(list).append($("<option />").val(item.name).text(item.name));
+                          $(list).append($("<option />").val(item.name).text(item.title));
                       });
                   }
                   $(list).removeAttr('disabled');
@@ -133,9 +193,9 @@ function loadStops() {
     $.ajax(
           {
               type: "GET",
-              url: "http://webservices.nextbus.com/service/publicJSONFeed",
+              url: "https://retro.umoiq.com/service/publicJSONFeed",
               data: "command=routeConfig&a=jtafla&r=" + $("#routeSelect").val(),
-              contentType: "application/json;	charset=utf-8",
+              //contentType: "application/json;	charset=utf-8",
               dataType: "json",
               success: function (msg) {
                   if (msg == null || msg.length == 0) {
@@ -157,7 +217,7 @@ function loadStops() {
                                   arrStops.push(item.stop[x].tag);
                               }
                               $("#routeStopSelect option").each(function () {
-                                  if (arrStops.indexOf(this.value) == -1) {
+                                  if (arrStops.indexOf(this.value) == -1 && this.value !=0) {
                                       //alert(item.stop.indexOf(this.value));
                                       $("#routeStopSelect option[value='" + this.value + "']").remove();
                                   }
@@ -184,9 +244,9 @@ function loadArrivals() {
     $.ajax(
           {
               type: "GET",
-              url: "http://webservices.nextbus.com/service/publicJSONFeed",
+              url: "https://retro.umoiq.com/service/publicJSONFeed",
               data: "command=predictions&a=jtafla&r=" + $("#routeSelect").val() + "&s=" + $("#routeStopSelect").val(),
-              contentType: "application/json;	charset=utf-8",
+              //contentType: "application/json;	charset=utf-8",
               dataType: "json",
               success: function (output) {
                   if (output == null || output.length == 0) {
@@ -230,4 +290,25 @@ function loadArrivals() {
                   }
               }
           });
+}
+
+function saveFavorites()
+{
+    var favStop = localStorage.getItem("Favorites");
+    var newFave = $('#routeSelect option:selected').val() + ">" + $("#routeStopSelect option:selected").val() + ":" + $('#routeSelect option:selected').text() + " > " + $("#routeDirectionSelect option:selected").text() + " > " + $("#routeStopSelect option:selected").text();
+        if (favStop == null)
+        {
+            favStop = newFave;
+        }   
+        else if(favStop.indexOf(newFave) == -1)
+        {
+            favStop = favStop + "|" + newFave;               
+        }
+        else
+        {
+            $("#message").text('Stop is already favorited!!');
+            return;
+        }
+        localStorage.setItem("Favorites", favStop);
+        $("#message").text('Stop added to favorites!!');
 }

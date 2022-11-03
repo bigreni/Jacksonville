@@ -37,19 +37,30 @@ div#fullpage {
 }
 
 a.langOption{
+    color: white;
     text-decoration: none;
 }
 
-a:link
+a.langOption:hover
 {
-    color: #333;
+    color: white;
+}
+
+a
+{
+    color: white;
     text-decoration: none;
 }
+
+/*a.linklocal:link
+{
+    color: #333;    
+}*/
 
 /* visited link */
 a:visited
 {
-    color: #333;
+    color: white;
 }
 
 /* mouse over link */
@@ -61,7 +72,7 @@ a:hover
 /* selected link */
 a:active
 {
-    color: #333;
+    color: white;
 } 
 
 h4.selectLanguage {
@@ -69,8 +80,8 @@ h4.selectLanguage {
     text-decoration: none;
     text-shadow: none;
     padding: 5px 0 5px 0;
-    background-color: #ecad00;
-    color: Black;
+    background-color: #e51b24;
+    color: white;
 }
 
 

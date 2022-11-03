@@ -19,6 +19,19 @@
             {
               "xml": "<meta-data android:name=\"com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT\" android:value=\"true\" />",
               "count": 1
+            },
+            {
+              "xml": "<application android:usesCleartextTraffic=\"true\" />",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml",
+              "oldAttrib": {
+                "android:hardwareAccelerated": "true",
+                "android:icon": "@mipmap/ic_launcher",
+                "android:label": "@string/app_name",
+                "android:supportsRtl": "true",
+                "android:usesCleartextTraffic": "true"
+              }
             }
           ],
           "/*": [
@@ -86,6 +99,9 @@
     }
   },
   "installed_plugins": {
+    "cordova-admobsdk": {
+      "PACKAGE_NAME": "com.jacksonville.free"
+    },
     "cordova-plugin-extension": {
       "PACKAGE_NAME": "com.jacksonville.free"
     },
@@ -122,9 +138,6 @@
       "PACKAGE_NAME": "com.jacksonville.free"
     },
     "cordova-plugin-wkwebview-file-xhr": {
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
-    "cordova-admobsdk": {
       "PACKAGE_NAME": "com.jacksonville.free"
     }
   },
@@ -233,6 +246,7 @@
     }
   ],
   "plugin_metadata": {
+    "cordova-admobsdk": "8.13.0",
     "cordova-plugin-extension": "1.6.0",
     "cordova-plugin-admobpro": "8.13.1",
     "cordova-plugin-dialogs": "2.0.2",
@@ -243,7 +257,6 @@
     "cordova-support-android-plugin": "2.0.4",
     "cordova-plugin-idfa": "2.1.0",
     "cordova-plugin-inappbrowser": "5.0.0",
-    "cordova-plugin-wkwebview-file-xhr": "3.1.0",
-    "cordova-admobsdk": "8.13.0"
+    "cordova-plugin-wkwebview-file-xhr": "3.1.0"
   }
 }
