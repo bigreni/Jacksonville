@@ -10,15 +10,6 @@
     "cordova-admobsdk": {
       "PACKAGE_NAME": "com.jacksonville.free"
     },
-    "cordova-plugin-admobpro": {
-      "ADMOB_ANDROID_APP_ID": "ca-app-pub-1855415514372943~9063671314",
-      "PLAY_SERVICES_VERSION": "20.4.0",
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
-    "cordova-plugin-apprate": {
-      "PLAY_CORE_VERSION": "1.+",
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.jacksonville.free"
     },
@@ -38,15 +29,6 @@
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
-    "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
-    "cordova-plugin-nativestorage": {
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
     "cordova-support-android-plugin": {
       "PACKAGE_NAME": "com.jacksonville.free"
     }

@@ -73,9 +73,9 @@
     {
         $("span").remove();
         $(".dropList").select2();
-        initApp();
+        //initApp();
         checkPermissions();
-        askRating();
+        //askRating();
         // document.getElementById('screen').style.display = 'none';     
     }
 
