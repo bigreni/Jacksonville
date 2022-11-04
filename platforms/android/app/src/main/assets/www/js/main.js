@@ -71,12 +71,17 @@
 
    function checkFirstUse()
     {
+        alert('1');
         $("span").remove();
+        alert('2');
         $(".dropList").select2();
-        initApp();
+        //initApp();
+        alert('3');
         checkPermissions();
+        alert('4');
         askRating();
-        // document.getElementById('screen').style.display = 'none';     
+        alert('5');
+        document.getElementById('screen').style.display = 'none';     
     }
 
     function notFirstUse()
