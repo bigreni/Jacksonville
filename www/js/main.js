@@ -73,7 +73,7 @@
     {
         $("span").remove();
         $(".dropList").select2();
-        //initApp();
+        initApp();
         checkPermissions();
         document.getElementById('screen').style.display = 'none';     
         askRating();
@@ -115,9 +115,7 @@ function checkPermissions(){
     
 function askRating()
 {
-    alert('0');
-    const appRatePlugin = cordova.plugins.AppRate;
-    alert('9');
+    const appRatePlugin = AppRate;
     appRatePlugin.setPreferences({
         reviewType: {
             ios: 'AppStoreReview',
