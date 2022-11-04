@@ -96,5 +96,13 @@
       "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~4339921524",
       "ADMOB_IOS_APP_ID": "ca-app-pub-9249695405712287~4304262501"
     }
+  },
+  "cordova-admobsdk": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-admobsdk"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

@@ -113,6 +113,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-plugin-apprate": "1.7.2",
     "cordova-plugin-extension": "1.6.0",
-    "cordova-plugin-admobpro": "8.13.1"
+    "cordova-plugin-admobpro": "8.13.1",
+    "cordova-admobsdk": "8.13.0"
   };
 });

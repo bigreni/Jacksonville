@@ -152,6 +152,9 @@
       "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~4339921524",
       "PLAY_SERVICES_VERSION": "20.4.0",
       "PACKAGE_NAME": "com.jacksonville.free"
+    },
+    "cordova-admobsdk": {
+      "PACKAGE_NAME": "com.jacksonville.free"
     }
   },
   "dependent_plugins": {},
@@ -269,6 +272,7 @@
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-plugin-apprate": "1.7.2",
     "cordova-plugin-extension": "1.6.0",
-    "cordova-plugin-admobpro": "8.13.1"
+    "cordova-plugin-admobpro": "8.13.1",
+    "cordova-admobsdk": "8.13.0"
   }
 }

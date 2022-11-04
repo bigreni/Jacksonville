@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "cordova-admobsdk": "^8.13.0",
     "cordova-android": "^11.0.0",
     "cordova-plugin-apprate": "^1.7.2",
     "cordova-plugin-device": "^2.1.0",
@@ -25,7 +26,8 @@
         "PLAY_SERVICES_VERSION": "20.5.0",
         "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~4339921524",
         "ADMOB_IOS_APP_ID": "ca-app-pub-9249695405712287~4304262501"
-      }
+      },
+      "cordova-admobsdk": {}
     },
     "platforms": [
       "android"
