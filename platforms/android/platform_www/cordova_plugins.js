@@ -100,6 +100,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "window.AdMob"
       ]
+    },
+    {
+      "id": "admob-plus-cordova.AdMob",
+      "file": "plugins/admob-plus-cordova/www/admob.js",
+      "pluginId": "admob-plus-cordova",
+      "clobbers": [
+        "admob"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -114,6 +122,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-apprate": "1.7.2",
     "cordova-plugin-extension": "1.6.0",
     "cordova-plugin-admobpro": "8.13.1",
-    "cordova-admobsdk": "8.13.0"
+    "cordova-admobsdk": "8.13.0",
+    "admob-plus-cordova": "1.28.0"
   };
 });

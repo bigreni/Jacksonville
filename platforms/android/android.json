@@ -65,10 +65,6 @@
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-              "count": 2
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
               "count": 1
             }
           ]
@@ -106,7 +102,7 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"admob.plus.cordova.AdMob\" /></feature>",
               "count": 1
             }
           ]
@@ -145,15 +141,9 @@
       "PLAY_CORE_VERSION": "1.+",
       "PACKAGE_NAME": "com.jacksonville.free"
     },
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
-    "cordova-plugin-admobpro": {
-      "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~4339921524",
-      "PLAY_SERVICES_VERSION": "20.4.0",
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
-    "cordova-admobsdk": {
+    "admob-plus-cordova": {
+      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~4339921524",
+      "PLAY_SERVICES_VERSION": "20.5.0",
       "PACKAGE_NAME": "com.jacksonville.free"
     }
   },
@@ -253,11 +243,11 @@
       "runs": true
     },
     {
-      "id": "cordova-plugin-admobpro.AdMob",
-      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-      "pluginId": "cordova-plugin-admobpro",
+      "id": "admob-plus-cordova.AdMob",
+      "file": "plugins/admob-plus-cordova/www/admob.js",
+      "pluginId": "admob-plus-cordova",
       "clobbers": [
-        "window.AdMob"
+        "admob"
       ]
     }
   ],
@@ -271,8 +261,6 @@
     "cordova-plugin-dialogs": "2.0.2",
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-plugin-apprate": "1.7.2",
-    "cordova-plugin-extension": "1.6.0",
-    "cordova-plugin-admobpro": "8.13.1",
-    "cordova-admobsdk": "8.13.0"
+    "admob-plus-cordova": "1.28.0"
   }
 }

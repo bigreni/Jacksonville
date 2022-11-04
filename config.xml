@@ -9,8 +9,8 @@
     </author>    
     <content src="index.html" />
 	<preference name="android-build-tool" value="gradle" /> 
-    <cdv:plugin name="cordova-plugin-admobpro" source="npm" >
-    </cdv:plugin>
+    <!-- <cdv:plugin name="cordova-plugin-admobpro" source="npm" /> -->
+    <cdv:plugin name="admob-plus-cordova" source="npm" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
