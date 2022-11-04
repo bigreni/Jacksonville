@@ -20,24 +20,12 @@
                 "android:supportsRtl": "true",
                 "android:usesCleartextTraffic": "true"
               }
-            },
-            {
-              "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:excludeFromRecents=\"true\" android:name=\"com.google.android.gms.ads.AdActivity\" android:noHistory=\"true\" />",
-              "count": 1
-            },
-            {
-              "xml": "<meta-data android:name=\"com.google.android.gms.ads.APPLICATION_ID\" android:value=\"ca-app-pub-9249695405712287~4339921524\" />",
-              "count": 1
-            },
-            {
-              "xml": "<meta-data android:name=\"com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT\" android:value=\"true\" />",
-              "count": 1
             }
           ],
           "/*": [
             {
               "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-              "count": 2
+              "count": 1
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
@@ -49,10 +37,6 @@
             },
             {
               "xml": "<uses-feature android:name=\"android.hardware.location.gps\" android:required=\"true\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
               "count": 1
             }
           ]
@@ -78,7 +62,15 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"NativeStorage\"><param name=\"android-package\" value=\"NativeStorage\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"AppRate\"><param name=\"android-package\" value=\"org.pushandplay.cordova.apprate.AppRate\" /></feature>",
               "count": 1
             }
           ]
@@ -110,12 +102,14 @@
     "cordova-plugin-wkwebview-file-xhr": {
       "PACKAGE_NAME": "com.jacksonville.free"
     },
-    "cordova-plugin-extension": {
+    "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.jacksonville.free"
     },
-    "cordova-plugin-admobpro": {
-      "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~4339921524",
-      "PLAY_SERVICES_VERSION": "20.4.0",
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.jacksonville.free"
+    },
+    "cordova-plugin-apprate": {
+      "PLAY_CORE_VERSION": "1.+",
       "PACKAGE_NAME": "com.jacksonville.free"
     }
   },
@@ -160,12 +154,59 @@
       ]
     },
     {
-      "id": "cordova-plugin-admobpro.AdMob",
-      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-      "pluginId": "cordova-plugin-admobpro",
-      "clobbers": [
-        "window.AdMob"
+      "id": "cordova-plugin-dialogs.notification",
+      "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+      "pluginId": "cordova-plugin-dialogs",
+      "merges": [
+        "navigator.notification"
       ]
+    },
+    {
+      "id": "cordova-plugin-dialogs.notification_android",
+      "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
+      "pluginId": "cordova-plugin-dialogs",
+      "merges": [
+        "navigator.notification"
+      ]
+    },
+    {
+      "id": "cordova-plugin-nativestorage.mainHandle",
+      "file": "plugins/cordova-plugin-nativestorage/www/mainHandle.js",
+      "pluginId": "cordova-plugin-nativestorage",
+      "clobbers": [
+        "NativeStorage"
+      ]
+    },
+    {
+      "id": "cordova-plugin-nativestorage.LocalStorageHandle",
+      "file": "plugins/cordova-plugin-nativestorage/www/LocalStorageHandle.js",
+      "pluginId": "cordova-plugin-nativestorage"
+    },
+    {
+      "id": "cordova-plugin-nativestorage.NativeStorageError",
+      "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
+      "pluginId": "cordova-plugin-nativestorage"
+    },
+    {
+      "id": "cordova-plugin-apprate.AppRate",
+      "file": "plugins/cordova-plugin-apprate/www/AppRate.js",
+      "pluginId": "cordova-plugin-apprate",
+      "clobbers": [
+        "AppRate",
+        "window.AppRate"
+      ]
+    },
+    {
+      "id": "cordova-plugin-apprate.locales",
+      "file": "plugins/cordova-plugin-apprate/www/locales.js",
+      "pluginId": "cordova-plugin-apprate",
+      "runs": true
+    },
+    {
+      "id": "cordova-plugin-apprate.storage",
+      "file": "plugins/cordova-plugin-apprate/www/storage.js",
+      "pluginId": "cordova-plugin-apprate",
+      "runs": true
     }
   ],
   "plugin_metadata": {
@@ -176,7 +217,8 @@
     "cordova-plugin-idfa": "2.1.0",
     "cordova-plugin-inappbrowser": "5.0.0",
     "cordova-plugin-wkwebview-file-xhr": "3.1.0",
-    "cordova-plugin-extension": "1.6.0",
-    "cordova-plugin-admobpro": "8.13.1"
+    "cordova-plugin-dialogs": "2.0.2",
+    "cordova-plugin-nativestorage": "2.3.2",
+    "cordova-plugin-apprate": "1.7.2"
   }
 }

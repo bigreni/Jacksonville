@@ -27,9 +27,8 @@
     "cordova-plugin-wkwebview-file-xhr": {
       "PACKAGE_NAME": "com.jacksonville.free"
     },
-    "cordova-plugin-admobpro": {
-      "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~4339921524",
-      "PLAY_SERVICES_VERSION": "20.4.0",
+    "cordova-plugin-apprate": {
+      "PLAY_CORE_VERSION": "1.+",
       "PACKAGE_NAME": "com.jacksonville.free"
     }
   },
@@ -37,7 +36,10 @@
     "cordova-support-android-plugin": {
       "PACKAGE_NAME": "com.jacksonville.free"
     },
-    "cordova-plugin-extension": {
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.jacksonville.free"
+    },
+    "cordova-plugin-nativestorage": {
       "PACKAGE_NAME": "com.jacksonville.free"
     }
   }

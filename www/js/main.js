@@ -73,10 +73,10 @@
     {
         $("span").remove();
         $(".dropList").select2();
-        initApp();
+        //initApp();
         checkPermissions();
-        //askRating();
-        //document.getElementById('screen').style.display = 'none';     
+        askRating();
+        document.getElementById('screen').style.display = 'none';     
     }
 
     function notFirstUse()
