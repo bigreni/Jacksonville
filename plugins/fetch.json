@@ -75,14 +75,6 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-admobsdk": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-admobsdk"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-apprate": {
     "source": {
       "type": "registry",
