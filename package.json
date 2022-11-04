@@ -20,10 +20,19 @@
       "cordova-plugin-wkwebview-file-xhr": {},
       "cordova-plugin-apprate": {
         "PLAY_CORE_VERSION": "1.+"
+      },
+      "cordova-plugin-admobpro": {
+        "PLAY_SERVICES_VERSION": "20.4.0",
+        "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~4339921524",
+        "ADMOB_IOS_APP_ID": "ca-app-pub-9249695405712287~4304262501"
       }
     },
     "platforms": [
       "android"
     ]
+  },
+  "dependencies": {
+    "cordova-plugin-admobpro": "8.13.1",
+    "cordova-plugin-extension": "1.6.0"
   }
 }

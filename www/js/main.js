@@ -71,17 +71,13 @@
 
    function checkFirstUse()
     {
-        alert('1');
         $("span").remove();
-        alert('2');
         $(".dropList").select2();
         //initApp();
-        alert('3');
         checkPermissions();
-        alert('4');
-        askRating();
-        alert('5');
         document.getElementById('screen').style.display = 'none';     
+        askRating();
+
     }
 
     function notFirstUse()
@@ -119,7 +115,10 @@ function checkPermissions(){
     
 function askRating()
 {
-    cordova.plugins.AppRate.setPreferences = {
+    alert('0');
+    const appRatePlugin = cordova.plugins.AppRate;
+    alert('9');
+    appRatePlugin.setPreferences({
         reviewType: {
             ios: 'AppStoreReview',
             android: 'InAppBrowser'
@@ -131,7 +130,7 @@ function askRating()
                 ios: '1296111737',
                 android: 'market://details?id=com.jacksonville.free'
                }
-};
+});
  
 AppRate.promptForRating(false);
 }
