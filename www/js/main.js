@@ -77,7 +77,7 @@
         $(".dropList").select2();
         initApp1();
         checkPermissions();
-        document.getElementById('screen').style.display = 'none';     
+        //document.getElementById('screen').style.display = 'none';     
         askRating();
 
     }
@@ -329,22 +329,27 @@ function initApp1()
 
 function registerAdEvents1() {
     // new events, with variable to differentiate: adNetwork, adType, adEvent
-    document.addEventListener('admob.ad.dismiss', function (data) {
+    document.addEventListener('admob.ad.load', function (data) {
+        alert('1');
         document.getElementById("screen").style.display = 'none';     
     });
     document.addEventListener('admob.ad.loadfail', function (data) {
+        alert('2');
         document.getElementById("screen").style.display = 'none';     
     });
     document.addEventListener('admob.ad.show', function (data) { 
+        alert('3');
         document.getElementById("screen").style.display = 'none';     
     });
     document.addEventListener('admob.ad.dismiss', function (data) {
+        alert('4');
        document.getElementById("screen").style.display = 'none';     
     });
 }
 
 function showAd1()
 {
+    alert('show');
     document.getElementById("screen").style.display = 'block';     
     if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
         interstitial.show();
