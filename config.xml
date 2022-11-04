@@ -55,6 +55,9 @@
         <preference name="AndroidWindowSplashScreenAnimationDuration" value="1"/>
         <preference name="ADMOB_ANDROID_APP_ID" default="ca-app-pub-9249695405712287~3054928351"/>
         <preference name="PLAY_SERVICES_VERSION" default="20.4.0"/>
+        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+            <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+        </edit-config>
         <allow-intent href="market:*" />
         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
