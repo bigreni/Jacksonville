@@ -133,7 +133,4 @@
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
     <preference name="InterceptRemoteRequests" value="all" />
     <preference name="SwiftVersion" value="5" />
-    <feature name="AdMob">
-        <param name="ios-package" value="AMBPlugin" />
-    </feature>
 </widget>

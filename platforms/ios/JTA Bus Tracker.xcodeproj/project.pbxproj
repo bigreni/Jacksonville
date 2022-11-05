@@ -32,17 +32,6 @@
 		407B8197A80A41B5B10F682E /* CDVWKInAppBrowserUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC3C5FFBC3C4B828789E88B /* CDVWKInAppBrowserUIDelegate.m */; };
 		D125DA02943843C68F5654DB /* CDVWKWebViewFileXhr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51F0F8492741158FFF9EFE /* CDVWKWebViewFileXhr.m */; };
 		BD684E756E274A75AFF0A025 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED232191B9D743D2A269A4B5 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		2E91508683EC483AA50AFE3F /* AMBAdBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD32B0DC062B422BA5E53DDA /* AMBAdBase.swift */; };
-		1AE9BF8C7EFA49D398DCCC68 /* AMBAppOpenAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A475A50CC1043DCA991C577 /* AMBAppOpenAd.swift */; };
-		84BA9642026041B3857E0495 /* AMBBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383F1F91E2BF4CBFA499CBE7 /* AMBBanner.swift */; };
-		CF13F0956F214F018AD064D4 /* AMBContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBBB3CE4F524DE893019EDA /* AMBContext.swift */; };
-		E8C7AE7C5BA642979FE9D442 /* AMBCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AEA3DAA0545E7BA576CCB /* AMBCore.swift */; };
-		986B75857BAD45EBB0A2C2F9 /* AMBGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D7775793A474D9CCBBA1B /* AMBGenerated.swift */; };
-		F756C30F749146F0A71EC556 /* AMBInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1FAC2436143BD98C95F26 /* AMBInterstitial.swift */; };
-		1D2C0CE608D6464C99C10E0D /* AMBNativeAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7331FD36A4F21ADB60F87 /* AMBNativeAd.swift */; };
-		ABEFB0A546684F6480B418E1 /* AMBPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0192C53664991BBB7B978 /* AMBPlugin.swift */; };
-		1C80DF8958D945C69BA777B8 /* AMBRewarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE68D4ECD8E430780B0425B /* AMBRewarded.swift */; };
-		9D9E8DEA6BA542668D43BC3C /* AMBRewardedInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396589DDA63A4217A2ED081B /* AMBRewardedInterstitial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,17 +108,6 @@
 		1A51F0F8492741158FFF9EFE /* CDVWKWebViewFileXhr.m */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.m"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		780E7C672456456AB70E3971 /* CDVWKWebViewFileXhr.h */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.h"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		ED232191B9D743D2A269A4B5 /* WebKit.framework */ = {isa = PBXFileReference; name = "WebKit.framework"; path = "System/Library/Frameworks/WebKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		CD32B0DC062B422BA5E53DDA /* AMBAdBase.swift */ = {isa = PBXFileReference; name = "AMBAdBase.swift"; path = "admob-plus-cordova/AMBAdBase.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		8A475A50CC1043DCA991C577 /* AMBAppOpenAd.swift */ = {isa = PBXFileReference; name = "AMBAppOpenAd.swift"; path = "admob-plus-cordova/AMBAppOpenAd.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		383F1F91E2BF4CBFA499CBE7 /* AMBBanner.swift */ = {isa = PBXFileReference; name = "AMBBanner.swift"; path = "admob-plus-cordova/AMBBanner.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		EBBBB3CE4F524DE893019EDA /* AMBContext.swift */ = {isa = PBXFileReference; name = "AMBContext.swift"; path = "admob-plus-cordova/AMBContext.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		C98AEA3DAA0545E7BA576CCB /* AMBCore.swift */ = {isa = PBXFileReference; name = "AMBCore.swift"; path = "admob-plus-cordova/AMBCore.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		5E1D7775793A474D9CCBBA1B /* AMBGenerated.swift */ = {isa = PBXFileReference; name = "AMBGenerated.swift"; path = "admob-plus-cordova/AMBGenerated.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		B9A1FAC2436143BD98C95F26 /* AMBInterstitial.swift */ = {isa = PBXFileReference; name = "AMBInterstitial.swift"; path = "admob-plus-cordova/AMBInterstitial.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		09B7331FD36A4F21ADB60F87 /* AMBNativeAd.swift */ = {isa = PBXFileReference; name = "AMBNativeAd.swift"; path = "admob-plus-cordova/AMBNativeAd.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		3CF0192C53664991BBB7B978 /* AMBPlugin.swift */ = {isa = PBXFileReference; name = "AMBPlugin.swift"; path = "admob-plus-cordova/AMBPlugin.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		9AE68D4ECD8E430780B0425B /* AMBRewarded.swift */ = {isa = PBXFileReference; name = "AMBRewarded.swift"; path = "admob-plus-cordova/AMBRewarded.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		396589DDA63A4217A2ED081B /* AMBRewardedInterstitial.swift */ = {isa = PBXFileReference; name = "AMBRewardedInterstitial.swift"; path = "admob-plus-cordova/AMBRewardedInterstitial.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,17 +247,6 @@
 				1511180C06C9448F82168D40 /* CDVWKInAppBrowserUIDelegate.h */,
 				1A51F0F8492741158FFF9EFE /* CDVWKWebViewFileXhr.m */,
 				780E7C672456456AB70E3971 /* CDVWKWebViewFileXhr.h */,
-				CD32B0DC062B422BA5E53DDA /* AMBAdBase.swift */,
-				8A475A50CC1043DCA991C577 /* AMBAppOpenAd.swift */,
-				383F1F91E2BF4CBFA499CBE7 /* AMBBanner.swift */,
-				EBBBB3CE4F524DE893019EDA /* AMBContext.swift */,
-				C98AEA3DAA0545E7BA576CCB /* AMBCore.swift */,
-				5E1D7775793A474D9CCBBA1B /* AMBGenerated.swift */,
-				B9A1FAC2436143BD98C95F26 /* AMBInterstitial.swift */,
-				09B7331FD36A4F21ADB60F87 /* AMBNativeAd.swift */,
-				3CF0192C53664991BBB7B978 /* AMBPlugin.swift */,
-				9AE68D4ECD8E430780B0425B /* AMBRewarded.swift */,
-				396589DDA63A4217A2ED081B /* AMBRewardedInterstitial.swift */,
 			);
 			name = Plugins;
 			path = "JTA Bus Tracker/Plugins";
@@ -420,17 +387,6 @@
 				0BE6C199DFDC4CE4A98B9BD0 /* CDVWKInAppBrowser.m in Sources */,
 				407B8197A80A41B5B10F682E /* CDVWKInAppBrowserUIDelegate.m in Sources */,
 				D125DA02943843C68F5654DB /* CDVWKWebViewFileXhr.m in Sources */,
-				2E91508683EC483AA50AFE3F /* AMBAdBase.swift in Sources */,
-				1AE9BF8C7EFA49D398DCCC68 /* AMBAppOpenAd.swift in Sources */,
-				84BA9642026041B3857E0495 /* AMBBanner.swift in Sources */,
-				CF13F0956F214F018AD064D4 /* AMBContext.swift in Sources */,
-				E8C7AE7C5BA642979FE9D442 /* AMBCore.swift in Sources */,
-				986B75857BAD45EBB0A2C2F9 /* AMBGenerated.swift in Sources */,
-				F756C30F749146F0A71EC556 /* AMBInterstitial.swift in Sources */,
-				1D2C0CE608D6464C99C10E0D /* AMBNativeAd.swift in Sources */,
-				ABEFB0A546684F6480B418E1 /* AMBPlugin.swift in Sources */,
-				1C80DF8958D945C69BA777B8 /* AMBRewarded.swift in Sources */,
-				9D9E8DEA6BA542668D43BC3C /* AMBRewardedInterstitial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
