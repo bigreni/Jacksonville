@@ -132,4 +132,7 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
     <preference name="InterceptRemoteRequests" value="all" />
+    <feature name="AdMob">
+        <param name="ios-package" value="AMBPlugin" />
+    </feature>
 </widget>
