@@ -64,7 +64,7 @@
         </edit-config>
     </platform>
     <platform name="ios">
-        <preference name="SwiftVersion" value="5"/>
+        <preference name="SwiftVersion" value="5.3"/>
         <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
             <string>Need location access to find things nearby</string>
         </edit-config>
