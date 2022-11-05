@@ -2,7 +2,7 @@
 
 platform :ios, '11.0'
 
-target 'C:\Users\naiar\Documents\GitHub\Jacksonville\platforms\ios\JTA Bus Tracker' do
-	project 'C:\Users\naiar\Documents\GitHub\Jacksonville\platforms\ios\JTA Bus Tracker.xcodeproj'
+target 'JTA Bus Tracker' do
+	project 'JTA Bus Tracker.xcodeproj'
 
 end

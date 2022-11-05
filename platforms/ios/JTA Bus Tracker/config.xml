@@ -132,5 +132,5 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
     <preference name="InterceptRemoteRequests" value="all" />
-    <preference name="SwiftVersion" value="5" />
+    <preference name="SwiftVersion" value="5.3" />
 </widget>

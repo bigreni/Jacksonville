@@ -22,11 +22,7 @@
               "mode": "merge",
               "id": "config.xml"
             }
-          ],
-          "GADApplicationIdentifier": [],
-          "GADDelayAppMeasurementInit": [],
-          "NSAppTransportSecurity": [],
-          "SKAdNetworkItems": []
+          ]
         }
       },
       "config.xml": {
