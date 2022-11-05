@@ -36,6 +36,18 @@
                 "android:supportsRtl": "true",
                 "android:usesCleartextTraffic": "true"
               }
+            },
+            {
+              "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:excludeFromRecents=\"true\" android:name=\"com.google.android.gms.ads.AdActivity\" android:noHistory=\"true\" />",
+              "count": 1
+            },
+            {
+              "xml": "<meta-data android:name=\"com.google.android.gms.ads.APPLICATION_ID\" android:value=\"ca-app-pub-9249695405712287~4339921524\" />",
+              "count": 1
+            },
+            {
+              "xml": "<meta-data android:name=\"com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT\" android:value=\"true\" />",
+              "count": 1
             }
           ],
           "/*": [
@@ -88,6 +100,10 @@
             {
               "xml": "<feature name=\"AppRate\"><param name=\"android-package\" value=\"org.pushandplay.cordova.apprate.AppRate\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"admob.plus.cordova.AdMob\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -123,6 +139,11 @@
     },
     "cordova-plugin-apprate": {
       "PLAY_CORE_VERSION": "1.+",
+      "PACKAGE_NAME": "com.jacksonville.free"
+    },
+    "admob-plus-cordova": {
+      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~4339921524",
+      "PLAY_SERVICES_VERSION": "20.5.0",
       "PACKAGE_NAME": "com.jacksonville.free"
     }
   },
@@ -220,6 +241,14 @@
       "file": "plugins/cordova-plugin-apprate/www/storage.js",
       "pluginId": "cordova-plugin-apprate",
       "runs": true
+    },
+    {
+      "id": "admob-plus-cordova.AdMob",
+      "file": "plugins/admob-plus-cordova/www/admob.js",
+      "pluginId": "admob-plus-cordova",
+      "clobbers": [
+        "admob"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -231,6 +260,7 @@
     "cordova-plugin-wkwebview-file-xhr": "3.1.0",
     "cordova-plugin-dialogs": "2.0.2",
     "cordova-plugin-nativestorage": "2.3.2",
-    "cordova-plugin-apprate": "1.7.2"
+    "cordova-plugin-apprate": "1.7.2",
+    "admob-plus-cordova": "1.28.0"
   }
 }

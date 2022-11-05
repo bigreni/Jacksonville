@@ -83,4 +83,7 @@
     <feature name="AppRate">
         <param name="android-package" value="org.pushandplay.cordova.apprate.AppRate" />
     </feature>
+    <feature name="AdMob">
+        <param name="android-package" value="admob.plus.cordova.AdMob" />
+    </feature>
 </widget>
