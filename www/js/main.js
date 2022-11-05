@@ -245,7 +245,7 @@ function loadStops() {
 function loadArrivals() {
     var outputContainer = $('.js-next-bus-results');
     var results = "";
-
+    showAd1();
     $.ajax(
           {
               type: "GET",
@@ -320,9 +320,22 @@ function saveFavorites()
 
 function initApp1()
 {
+    if (/(android)/i.test(navigator.userAgent)){
     interstitial = new admob.InterstitialAd({
-        adUnitId: 'ca-app-pub-9249695405712287/5352871863'
+        //dev
+        adUnitId: 'ca-app-pub-3940256099942544/1033173712'
+        //prod
+        //adUnitId: 'ca-app-pub-9249695405712287/5352871863'
       });
+    }
+    else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+        interstitial = new admob.InterstitialAd({
+            //dev
+            adUnitId: 'ca-app-pub-3940256099942544/4411468910'
+            //prod
+            //adUnitId: 'ca-app-pub-9249695405712287/9413984920'
+          });
+    }
     registerAdEvents1();
     interstitial.load();
 }
@@ -330,26 +343,21 @@ function initApp1()
 function registerAdEvents1() {
     // new events, with variable to differentiate: adNetwork, adType, adEvent
     document.addEventListener('admob.ad.load', function (data) {
-        alert('1');
         document.getElementById("screen").style.display = 'none';     
     });
     document.addEventListener('admob.ad.loadfail', function (data) {
-        alert('2');
         document.getElementById("screen").style.display = 'none';     
     });
     document.addEventListener('admob.ad.show', function (data) { 
-        alert('3');
         document.getElementById("screen").style.display = 'none';     
     });
     document.addEventListener('admob.ad.dismiss', function (data) {
-        alert('4');
        document.getElementById("screen").style.display = 'none';     
     });
 }
 
 function showAd1()
 {
-    alert('show');
     document.getElementById("screen").style.display = 'block';     
     if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
         interstitial.show();
