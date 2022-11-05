@@ -91,10 +91,6 @@
       "id": "admob-plus-cordova"
     },
     "is_top_level": true,
-    "variables": {
-      "PLAY_SERVICES_VERSION": "20.5.0",
-      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~4339921524",
-      "APP_ID_IOS": "ca-app-pub-9249695405712287~4304262501"
-    }
+    "variables": {}
   }
 }

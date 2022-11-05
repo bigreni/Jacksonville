@@ -92,14 +92,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "file": "plugins/cordova-plugin-apprate/www/storage.js",
       "pluginId": "cordova-plugin-apprate",
       "runs": true
-    },
-    {
-      "id": "admob-plus-cordova.AdMob",
-      "file": "plugins/admob-plus-cordova/www/admob.js",
-      "pluginId": "admob-plus-cordova",
-      "clobbers": [
-        "admob"
-      ]
     }
   ];
   module.exports.metadata = {
@@ -111,7 +103,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-wkwebview-file-xhr": "3.1.0",
     "cordova-plugin-dialogs": "2.0.2",
     "cordova-plugin-nativestorage": "2.3.2",
-    "cordova-plugin-apprate": "1.7.2",
-    "admob-plus-cordova": "1.28.0"
+    "cordova-plugin-apprate": "1.7.2"
   };
 });
