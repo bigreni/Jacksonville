@@ -7,6 +7,12 @@
     "files": {}
   },
   "installed_plugins": {
+    "admob-plus-cordova": {
+      "APP_ID_IOS": "ca-app-pub-9249695405712287~4304262501",
+      "USAGE": "This identifier will be used to deliver personalized ads to you.",
+      "DISABLESDKCRASHREPORTING": "false",
+      "PACKAGE_NAME": "com.jacksonville.free"
+    },
     "cordova-plugin-apprate": {
       "PACKAGE_NAME": "com.jacksonville.free"
     },
@@ -24,12 +30,6 @@
       "PACKAGE_NAME": "com.jacksonville.free"
     },
     "cordova-plugin-wkwebview-file-xhr": {
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
-    "admob-plus-cordova": {
-      "APP_ID_IOS": "ca-app-pub-9249695405712287~4304262501",
-      "USAGE": "This identifier will be used to deliver personalized ads to you.",
-      "DISABLESDKCRASHREPORTING": "false",
       "PACKAGE_NAME": "com.jacksonville.free"
     }
   },
