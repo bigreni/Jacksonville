@@ -17,14 +17,14 @@
           ],
           "NSUserTrackingUsageDescription": [
             {
-              "xml": "<string>This identifier will be used to deliver personalized ads to you.</string>",
-              "count": 1
-            },
-            {
               "xml": "<string>Used to remember and personalize your experience</string>",
               "count": 1,
               "mode": "merge",
               "id": "config.xml"
+            },
+            {
+              "xml": "<string>This identifier will be used to deliver personalized ads to you.</string>",
+              "count": 1
             }
           ],
           "GADApplicationIdentifier": [
@@ -57,10 +57,6 @@
         "parents": {
           "/*": [
             {
-              "xml": "<feature name=\"AdMob\"><param name=\"ios-package\" value=\"AMBPlugin\" /></feature>",
-              "count": 1
-            },
-            {
               "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
               "count": 1
             },
@@ -91,6 +87,10 @@
             {
               "xml": "<feature name=\"CDVWKWebViewFileXhr\"><param name=\"ios-package\" value=\"CDVWKWebViewFileXhr\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"AdMob\"><param name=\"ios-package\" value=\"AMBPlugin\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -98,12 +98,6 @@
     }
   },
   "installed_plugins": {
-    "admob-plus-cordova": {
-      "APP_ID_IOS": "ca-app-pub-9249695405712287~4304262501",
-      "USAGE": "This identifier will be used to deliver personalized ads to you.",
-      "DISABLESDKCRASHREPORTING": "false",
-      "PACKAGE_NAME": "com.jacksonville.free"
-    },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.jacksonville.free"
     },
@@ -131,18 +125,16 @@
     },
     "cordova-support-android-plugin": {
       "PACKAGE_NAME": "com.jacksonville.free"
+    },
+    "admob-plus-cordova": {
+      "APP_ID_IOS": "ca-app-pub-9249695405712287~4304262501",
+      "USAGE": "This identifier will be used to deliver personalized ads to you.",
+      "DISABLESDKCRASHREPORTING": "false",
+      "PACKAGE_NAME": "com.jacksonville.free"
     }
   },
   "dependent_plugins": {},
   "modules": [
-    {
-      "id": "admob-plus-cordova.AdMob",
-      "file": "plugins/admob-plus-cordova/www/admob.js",
-      "pluginId": "admob-plus-cordova",
-      "clobbers": [
-        "admob"
-      ]
-    },
     {
       "id": "cordova-plugin-dialogs.notification",
       "file": "plugins/cordova-plugin-dialogs/www/notification.js",
@@ -269,10 +261,17 @@
       "file": "plugins/cordova-plugin-wkwebview-file-xhr/src/www/ios/whatwg-fetch-2.0.3.js",
       "pluginId": "cordova-plugin-wkwebview-file-xhr",
       "runs": true
+    },
+    {
+      "id": "admob-plus-cordova.AdMob",
+      "file": "plugins/admob-plus-cordova/www/admob.js",
+      "pluginId": "admob-plus-cordova",
+      "clobbers": [
+        "admob"
+      ]
     }
   ],
   "plugin_metadata": {
-    "admob-plus-cordova": "1.28.0",
     "cordova-plugin-dialogs": "2.0.2",
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-plugin-apprate": "1.7.2",
@@ -281,6 +280,7 @@
     "cordova-plugin-idfa": "2.1.0",
     "cordova-plugin-inappbrowser": "5.0.0",
     "cordova-plugin-wkwebview-file-xhr": "3.1.0",
-    "cordova-support-android-plugin": "2.0.4"
+    "cordova-support-android-plugin": "2.0.4",
+    "admob-plus-cordova": "1.28.0"
   }
 }
