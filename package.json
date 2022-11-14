@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "admob-plus-cordova": "^1.28.0",
     "cordova-android": "^11.0.0",
     "cordova-ios": "^6.2.0",
     "cordova-plugin-apprate": "^1.7.2",
@@ -34,8 +35,5 @@
       "android",
       "ios"
     ]
-  },
-  "dependencies": {
-    "admob-plus-cordova": "1.28.0"
   }
 }
