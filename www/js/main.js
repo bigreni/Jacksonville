@@ -337,17 +337,17 @@ function initApp1()
     if (/(android)/i.test(navigator.userAgent)){
     interstitial = new admob.InterstitialAd({
         //dev
-        adUnitId: 'ca-app-pub-3940256099942544/1033173712'
+        //adUnitId: 'ca-app-pub-3940256099942544/1033173712'
         //prod
-        //adUnitId: 'ca-app-pub-9249695405712287/5352871863'
+        adUnitId: 'ca-app-pub-9249695405712287/5352871863'
       });
     }
     else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
         interstitial = new admob.InterstitialAd({
             //dev
-            adUnitId: 'ca-app-pub-3940256099942544/4411468910'
+            //adUnitId: 'ca-app-pub-3940256099942544/4411468910'
             //prod
-            //adUnitId: 'ca-app-pub-9249695405712287/9413984920'
+            adUnitId: 'ca-app-pub-9249695405712287/9413984920'
           });
     }
     registerAdEvents1();
