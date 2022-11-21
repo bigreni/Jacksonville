@@ -128,7 +128,7 @@ function askRating()
   usesUntilPrompt: 10,
   promptAgainForEachNewVersion: true,
   storeAppURL: {
-                ios: '1296111737',
+                ios: '6444600493',
                 android: 'market://details?id=com.jacksonville.free'
                }
 });
