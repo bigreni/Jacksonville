@@ -1,7 +1,7 @@
     var interstitial;
     
     function onLoad() {
-        if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
+        if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent)) || (navigator.userAgent.includes("Mac") && "ontouchend" in document))  {
             document.addEventListener('deviceready', checkFirstUse, false);
         } else {
             notFirstUse();
@@ -62,7 +62,7 @@
         if ((/(android|windows phone)/i.test(navigator.userAgent))) {
             AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: true, autoShow: false });
             //document.getElementById("screen").style.display = 'none';     
-        } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))) {
+        } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))|| (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
             AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: true, autoShow: false });
             //document.getElementById("screen").style.display = 'none';     
         } else
@@ -77,6 +77,7 @@
         $(".dropList").select2();
         initApp1();
         checkPermissions();
+        checkAdStatus();
         //document.getElementById('screen').style.display = 'none';     
         askRating();
 
@@ -86,13 +87,38 @@
     {
         $("span").remove();
         $(".dropList").select2();
+        checkAdStatus();
         document.getElementById("screen").style.display = 'none';     
+    }
+
+    function checkAdStatus()
+    {
+        var showad = localStorage.getItem("numUses");
+        if (showad == null)
+        {
+            var favStop = localStorage.getItem("Favorites");
+            if (favStop != null)
+            {
+                localStorage.setItem("numUses", "10");
+            }
+            else
+            {
+                localStorage.setItem("numUses", "1");
+            }
+        }
+        else if(parseInt(showad) < 10)
+        {
+            showad = parseInt(showad) + 1;
+            localStorage.setItem("numUses", showad);
+        }    
     }
 
 function loadFaves()
 {
     //showAd();
-    showAd1();
+    var adshow = localStorage.getItem("numUses");
+    if(parseInt(adshow) >= 10)
+        showAd1();
     window.location = "Favorites.html";
 }
 
@@ -139,7 +165,7 @@ AppRate.promptForRating(false);
 function showAd()
 {
     document.getElementById("screen").style.display = 'block';     
-    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
+    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent)) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
         AdMob.isInterstitialReady(function(isready){
             if(isready) 
                 AdMob.showInterstitial();
@@ -213,6 +239,7 @@ function loadStops() {
                   var numDirections = msg['route'].direction;
                   var arrStops = [];
                       $.each(numStops, function (index, item) {
+                        if(item.stopId != null)
                           $(stopList).append($("<option />").val(item.stopId).text(item.title));
                       });
                   if (numDirections.length != null) {
@@ -245,7 +272,9 @@ function loadStops() {
 function loadArrivals() {
     var outputContainer = $('.js-next-bus-results');
     var results = "";
-    showAd1();
+    var adshow = localStorage.getItem("numUses");
+    if(parseInt(adshow) >= 10)
+        showAd1();
     $.ajax(
           {
               type: "GET",
