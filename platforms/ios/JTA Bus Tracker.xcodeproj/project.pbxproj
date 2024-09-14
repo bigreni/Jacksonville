@@ -1,0 +1,709 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0207DA581B56EA530066E2B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Assets.xcassets */; };
+		04D627A2C90D432C8F661CCE /* AMBInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF5C18A3AB40A69F60CC36 /* AMBInterstitial.swift */; };
+		055D49179DD34A38A2F18256 /* AMBNativeAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D07078511A64B88865033CA /* AMBNativeAd.swift */; };
+		0767D66198FD486F8770DB45 /* AMBGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D2729264444C09483B7CA /* AMBGenerated.swift */; };
+		118E7CEF7E9D4464AE2165BE /* AMBBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1DD8D31B414E7BA1ABF1C1 /* AMBBanner.swift */; };
+		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
+		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
+		43867E46A4744B9BAC5FACC4 /* AMBPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9E133EE0046FE9FA124B5 /* AMBPlugin.swift */; };
+		4E7CA2B6272ABB0D00177EF9 /* config.xml in Copy Staging Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
+		4E7CA2B7272ABB0D00177EF9 /* www in Copy Staging Resources */ = {isa = PBXBuildFile; fileRef = 301BF56E109A69640062928A /* www */; };
+		56475BAC5A624E4A88C28DDE /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49235FB24AE441E1A6DFEA95 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
+		75F7ADA07D1546308EBCC858 /* AMBRewardedInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D5FAE6FBA4712BAA5B8B3 /* AMBRewardedInterstitial.swift */; };
+		7A27259EE16B4C48885A3010 /* AMBAdBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB4BC3A3444EF1B1B23DDB /* AMBAdBase.swift */; };
+		90B630EF2AECBBD0009EF368 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 90B630EE2AECBBD0009EF368 /* PrivacyInfo.xcprivacy */; };
+		981B1F2C2DA94CAD8ED53DD0 /* AMBRewarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406F02A2AB4C46D08D0C596F /* AMBRewarded.swift */; };
+		DD75DD8695F84096AE32E524 /* AMBAppOpenAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF46DBA398648DC94BEC034 /* AMBAppOpenAd.swift */; };
+		E56B3EDF905443A09D1B708B /* AMBCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAF8D9D2694DFCB348B729 /* AMBCore.swift */; };
+		E8A5E404B1684D0CA7925CEE /* AMBContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86529F9283EC4F23826FEE91 /* AMBContext.swift */; };
+		ED0EE460DE418E8C58E31AD5 /* Pods_JTA_Bus_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B881625A99E0288E2843F67B /* Pods_JTA_Bus_Tracker.framework */; };
+		DEEA330B23554DF7A87B6807 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 3644676283D34D9787C0E851 /* CDVNotification.m */; };
+		26D102EF4DCB4BEF978F1B8E /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0EA501EDDF4C40E383FBF386 /* CDVNotification.bundle */; };
+		BE87753D5C57432593AD9620 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577896763B4A464EB993930F /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E681A90CC1794FD684CB3980 /* NativeStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC511427BEE4C68AF3ADEA2 /* NativeStorage.m */; };
+		86A83E7D085349198F21A3CC /* CDVAppRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 879D041D15F343D7A6347773 /* CDVAppRate.m */; };
+		AF070741C69848E795C9DCA9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A728D681DC404DA64F9551 /* StoreKit.framework */; };
+		DF48A7B7AE344746A2DFC67C /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C5E3C9D90465D842943FF /* CDVDevice.m */; };
+		6FD14D73CB884EFC912A6181 /* CDVDevice.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80CB605E3F9441639304B544 /* CDVDevice.bundle */; };
+		54A94863E3EF45CA9500627D /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA6C88B04DA4F58985F2ADF /* CDVLocation.m */; };
+		1D07236F698C4E1B94B54327 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D754F3F51A647BBA6CC5F4E /* CoreLocation.framework */; };
+		3535598B1313405F9FD20286 /* IdfaPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B46A0880C4DAC8DED9E61 /* IdfaPlugin.m */; };
+		2CFB14684AF044DA94F88F69 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8204076E29B549DC9CE6BCF2 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F2875CEB425F4FB8A5251649 /* CDVInAppBrowserOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 464BCE2D3B344D018D487051 /* CDVInAppBrowserOptions.m */; };
+		3F78AD2B546E45DA8C6C0DF6 /* CDVInAppBrowserNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD1415C9B47432F8D9CB7CB /* CDVInAppBrowserNavigationController.m */; };
+		DA2AE5AF43404A2093FE68E7 /* CDVWKInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8FA6E54D11494EA4209F58 /* CDVWKInAppBrowser.m */; };
+		BA1E881F3D464082B9344AFC /* CDVWKInAppBrowserUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306D962EA484AD5A5C96564 /* CDVWKInAppBrowserUIDelegate.m */; };
+		201A1345700B48BBBD5C81C9 /* InAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = E490DB8B03C048E9B1DF9D82 /* InAppPurchase.m */; };
+		7639E99D36494C67BBD15792 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD41EEA35524ABA838900C0 /* SKProduct+LocalizedPrice.m */; };
+		939404DB4D7543228EECD11A /* SKProductDiscount+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 310582F19EB2445EAEC78D71 /* SKProductDiscount+LocalizedPrice.m */; };
+		A3DCB144FB77439CB1110E4E /* FileUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315DC787C5349EB8E3CFC8B /* FileUtility.m */; };
+		F0A102E4F801417B93D79C31 /* CDVWKWebViewFileXhr.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCCA521F3AC4428B21C5352 /* CDVWKWebViewFileXhr.m */; };
+		654FF2400A65459C9DC93B68 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E7F4C6948F47AC976A0D9E /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		301BF534109A57CC0062928A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = CordovaLib;
+		};
+		301BF550109A68C00062928A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CordovaLib;
+		};
+		907D8123214C687600058A10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C0C01EB21E3911D50056E6CB;
+			remoteInfo = Cordova;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		857339E32710CC9700A1C74C /* Copy Staging Resources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				4E7CA2B6272ABB0D00177EF9 /* config.xml in Copy Staging Resources */,
+				4E7CA2B7272ABB0D00177EF9 /* www in Copy Staging Resources */,
+			);
+			name = "Copy Staging Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0207DA571B56EA530066E2B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		029D2729264444C09483B7CA /* AMBGenerated.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBGenerated.swift; path = "admob-plus-cordova/AMBGenerated.swift"; sourceTree = "<group>"; };
+		17B5B841F3B79BB09D7B9986 /* Pods-JTA Bus Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JTA Bus Tracker.debug.xcconfig"; path = "Target Support Files/Pods-JTA Bus Tracker/Pods-JTA Bus Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		1D07078511A64B88865033CA /* AMBNativeAd.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBNativeAd.swift; path = "admob-plus-cordova/AMBNativeAd.swift"; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* JTA Bus Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JTA Bus Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
+		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
+		302D95EE14D2391D003F00A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		302D95EF14D2391D003F00A1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		302D95F014D2391D003F00A1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3047A50F1AB8059700498E2A /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-debug.xcconfig"; path = "cordova/build-debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
+		32CA4F630368D1EE00C91783 /* JTA Bus Tracker-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JTA Bus Tracker-Prefix.pch"; sourceTree = "<group>"; };
+		3A3D5FAE6FBA4712BAA5B8B3 /* AMBRewardedInterstitial.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBRewardedInterstitial.swift; path = "admob-plus-cordova/AMBRewardedInterstitial.swift"; sourceTree = "<group>"; };
+		406F02A2AB4C46D08D0C596F /* AMBRewarded.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBRewarded.swift; path = "admob-plus-cordova/AMBRewarded.swift"; sourceTree = "<group>"; };
+		49235FB24AE441E1A6DFEA95 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CDVLaunchScreen.storyboard; sourceTree = "<group>"; };
+		6EF46DBA398648DC94BEC034 /* AMBAppOpenAd.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBAppOpenAd.swift; path = "admob-plus-cordova/AMBAppOpenAd.swift"; sourceTree = "<group>"; };
+		7ABF5C18A3AB40A69F60CC36 /* AMBInterstitial.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBInterstitial.swift; path = "admob-plus-cordova/AMBInterstitial.swift"; sourceTree = "<group>"; };
+		86529F9283EC4F23826FEE91 /* AMBContext.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBContext.swift; path = "admob-plus-cordova/AMBContext.swift"; sourceTree = "<group>"; };
+		88FAB70B325C6BC35CAEE107 /* Pods-JTA Bus Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JTA Bus Tracker.release.xcconfig"; path = "Target Support Files/Pods-JTA Bus Tracker/Pods-JTA Bus Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* JTA Bus Tracker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "JTA Bus Tracker-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		90B630EE2AECBBD0009EF368 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		98FB4BC3A3444EF1B1B23DDB /* AMBAdBase.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBAdBase.swift; path = "admob-plus-cordova/AMBAdBase.swift"; sourceTree = "<group>"; };
+		9F1DD8D31B414E7BA1ABF1C1 /* AMBBanner.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBBanner.swift; path = "admob-plus-cordova/AMBBanner.swift"; sourceTree = "<group>"; };
+		B881625A99E0288E2843F67B /* Pods_JTA_Bus_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JTA_Bus_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
+		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
+		ECCAF8D9D2694DFCB348B729 /* AMBCore.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBCore.swift; path = "admob-plus-cordova/AMBCore.swift"; sourceTree = "<group>"; };
+		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F1D9E133EE0046FE9FA124B5 /* AMBPlugin.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AMBPlugin.swift; path = "admob-plus-cordova/AMBPlugin.swift"; sourceTree = "<group>"; };
+		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "JTA Bus Tracker/config.xml"; sourceTree = "<group>"; };
+		3644676283D34D9787C0E851 /* CDVNotification.m */ = {isa = PBXFileReference; name = "CDVNotification.m"; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		5DFEFBE3B76D4B929FECD648 /* CDVNotification.h */ = {isa = PBXFileReference; name = "CDVNotification.h"; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		0EA501EDDF4C40E383FBF386 /* CDVNotification.bundle */ = {isa = PBXFileReference; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
+		577896763B4A464EB993930F /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		8CC511427BEE4C68AF3ADEA2 /* NativeStorage.m */ = {isa = PBXFileReference; name = "NativeStorage.m"; path = "cordova-plugin-nativestorage/NativeStorage.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		D2BF9292C43B402194C950B2 /* NativeStorage.h */ = {isa = PBXFileReference; name = "NativeStorage.h"; path = "cordova-plugin-nativestorage/NativeStorage.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		879D041D15F343D7A6347773 /* CDVAppRate.m */ = {isa = PBXFileReference; name = "CDVAppRate.m"; path = "cordova-plugin-apprate/CDVAppRate.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		C08968FDD1DC486795766297 /* CDVAppRate.h */ = {isa = PBXFileReference; name = "CDVAppRate.h"; path = "cordova-plugin-apprate/CDVAppRate.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		90A728D681DC404DA64F9551 /* StoreKit.framework */ = {isa = PBXFileReference; name = "StoreKit.framework"; path = "System/Library/Frameworks/StoreKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		4E8C5E3C9D90465D842943FF /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		37564BDB06844741AB742566 /* CDVDevice.h */ = {isa = PBXFileReference; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		80CB605E3F9441639304B544 /* CDVDevice.bundle */ = {isa = PBXFileReference; name = "CDVDevice.bundle"; path = "CDVDevice.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
+		DFA6C88B04DA4F58985F2ADF /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		FAFF477590F542AD9A9E754D /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		2D754F3F51A647BBA6CC5F4E /* CoreLocation.framework */ = {isa = PBXFileReference; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		3B3B46A0880C4DAC8DED9E61 /* IdfaPlugin.m */ = {isa = PBXFileReference; name = "IdfaPlugin.m"; path = "cordova-plugin-idfa/IdfaPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		FB7038B2EF87497B9265D13A /* IdfaPlugin.h */ = {isa = PBXFileReference; name = "IdfaPlugin.h"; path = "cordova-plugin-idfa/IdfaPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		8204076E29B549DC9CE6BCF2 /* AdSupport.framework */ = {isa = PBXFileReference; name = "AdSupport.framework"; path = "System/Library/Frameworks/AdSupport.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		464BCE2D3B344D018D487051 /* CDVInAppBrowserOptions.m */ = {isa = PBXFileReference; name = "CDVInAppBrowserOptions.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowserOptions.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		DDD1415C9B47432F8D9CB7CB /* CDVInAppBrowserNavigationController.m */ = {isa = PBXFileReference; name = "CDVInAppBrowserNavigationController.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowserNavigationController.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		4E8FA6E54D11494EA4209F58 /* CDVWKInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVWKInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		0306D962EA484AD5A5C96564 /* CDVWKInAppBrowserUIDelegate.m */ = {isa = PBXFileReference; name = "CDVWKInAppBrowserUIDelegate.m"; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowserUIDelegate.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		93DD22B0F1244F86B4B454B4 /* CDVInAppBrowserOptions.h */ = {isa = PBXFileReference; name = "CDVInAppBrowserOptions.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowserOptions.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		9BEFCDFE6872402BBF6F684E /* CDVInAppBrowserNavigationController.h */ = {isa = PBXFileReference; name = "CDVInAppBrowserNavigationController.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowserNavigationController.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		726F3F3E224241ACBEF06280 /* CDVWKInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVWKInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		87EB32A61C1041458BDA4A35 /* CDVWKInAppBrowserUIDelegate.h */ = {isa = PBXFileReference; name = "CDVWKInAppBrowserUIDelegate.h"; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowserUIDelegate.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E490DB8B03C048E9B1DF9D82 /* InAppPurchase.m */ = {isa = PBXFileReference; name = "InAppPurchase.m"; path = "cordova-plugin-purchase/InAppPurchase.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		DDD41EEA35524ABA838900C0 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; name = "SKProduct+LocalizedPrice.m"; path = "cordova-plugin-purchase/SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		310582F19EB2445EAEC78D71 /* SKProductDiscount+LocalizedPrice.m */ = {isa = PBXFileReference; name = "SKProductDiscount+LocalizedPrice.m"; path = "cordova-plugin-purchase/SKProductDiscount+LocalizedPrice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		1315DC787C5349EB8E3CFC8B /* FileUtility.m */ = {isa = PBXFileReference; name = "FileUtility.m"; path = "cordova-plugin-purchase/FileUtility.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		DBCD164AE4E847EF8D658FC1 /* InAppPurchase.h */ = {isa = PBXFileReference; name = "InAppPurchase.h"; path = "cordova-plugin-purchase/InAppPurchase.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		3D52B38676C94A0989B431D9 /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; name = "SKProduct+LocalizedPrice.h"; path = "cordova-plugin-purchase/SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		AFB35ABC18C34BB9B665427F /* SKProductDiscount+LocalizedPrice.h */ = {isa = PBXFileReference; name = "SKProductDiscount+LocalizedPrice.h"; path = "cordova-plugin-purchase/SKProductDiscount+LocalizedPrice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		B68C262BABB1415D9B3B556C /* FileUtility.h */ = {isa = PBXFileReference; name = "FileUtility.h"; path = "cordova-plugin-purchase/FileUtility.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		ACCCA521F3AC4428B21C5352 /* CDVWKWebViewFileXhr.m */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.m"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		AACA9F53F864409B9CD96037 /* CDVWKWebViewFileXhr.h */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.h"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		A7E7F4C6948F47AC976A0D9E /* WebKit.framework */ = {isa = PBXFileReference; name = "WebKit.framework"; path = "System/Library/Frameworks/WebKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				56475BAC5A624E4A88C28DDE /* AppTrackingTransparency.framework in Frameworks */,
+				ED0EE460DE418E8C58E31AD5 /* Pods_JTA_Bus_Tracker.framework in Frameworks */,
+				BE87753D5C57432593AD9620 /* AudioToolbox.framework in Frameworks */,
+				AF070741C69848E795C9DCA9 /* StoreKit.framework in Frameworks */,
+				1D07236F698C4E1B94B54327 /* CoreLocation.framework in Frameworks */,
+				2CFB14684AF044DA94F88F69 /* AdSupport.framework in Frameworks */,
+				654FF2400A65459C9DC93B68 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* JTA Bus Tracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA = {
+			isa = PBXGroup;
+			children = (
+				EB87FDF41871DAF40020F90C /* config.xml */,
+				3047A50E1AB8057F00498E2A /* config */,
+				EB87FDF31871DA8E0020F90C /* www */,
+				EB87FDF11871DA420020F90C /* Staging */,
+				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
+				29B97315FDCFA39411CA2CEA /* JTA Bus Tracker */,
+				307C750510C5A3420062BCA9 /* Plugins */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				DF6856D06D516EFE22D9EFF7 /* Pods */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* JTA Bus Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				90B630EE2AECBBD0009EF368 /* PrivacyInfo.xcprivacy */,
+				8D1107310486CEB800E47090 /* JTA Bus Tracker-Info.plist */,
+				32CA4F630368D1EE00C91783 /* JTA Bus Tracker-Prefix.pch */,
+				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				0207DA571B56EA530066E2B4 /* Assets.xcassets */,
+				ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */,
+				302D95EE14D2391D003F00A1 /* MainViewController.h */,
+				302D95EF14D2391D003F00A1 /* MainViewController.m */,
+				302D95F014D2391D003F00A1 /* MainViewController.xib */,
+				1D3623240D0F684500981E51 /* AppDelegate.h */,
+				1D3623250D0F684500981E51 /* AppDelegate.m */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "JTA Bus Tracker";
+			path = "JTA Bus Tracker";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0EA501EDDF4C40E383FBF386 /* CDVNotification.bundle */,
+				80CB605E3F9441639304B544 /* CDVDevice.bundle */,
+			);
+			name = Resources;
+			path = "JTA Bus Tracker/Resources";
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49235FB24AE441E1A6DFEA95 /* AppTrackingTransparency.framework */,
+				B881625A99E0288E2843F67B /* Pods_JTA_Bus_Tracker.framework */,
+				577896763B4A464EB993930F /* AudioToolbox.framework */,
+				90A728D681DC404DA64F9551 /* StoreKit.framework */,
+				2D754F3F51A647BBA6CC5F4E /* CoreLocation.framework */,
+				8204076E29B549DC9CE6BCF2 /* AdSupport.framework */,
+				A7E7F4C6948F47AC976A0D9E /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		301BF52E109A57CC0062928A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				301BF535109A57CC0062928A /* libCordova.a */,
+				907D8124214C687600058A10 /* Cordova.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3047A50E1AB8057F00498E2A /* config */ = {
+			isa = PBXGroup;
+			children = (
+				3047A50F1AB8059700498E2A /* build-debug.xcconfig */,
+				3047A5101AB8059700498E2A /* build-release.xcconfig */,
+				3047A5111AB8059700498E2A /* build.xcconfig */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		307C750510C5A3420062BCA9 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				98FB4BC3A3444EF1B1B23DDB /* AMBAdBase.swift */,
+				6EF46DBA398648DC94BEC034 /* AMBAppOpenAd.swift */,
+				9F1DD8D31B414E7BA1ABF1C1 /* AMBBanner.swift */,
+				86529F9283EC4F23826FEE91 /* AMBContext.swift */,
+				ECCAF8D9D2694DFCB348B729 /* AMBCore.swift */,
+				029D2729264444C09483B7CA /* AMBGenerated.swift */,
+				7ABF5C18A3AB40A69F60CC36 /* AMBInterstitial.swift */,
+				1D07078511A64B88865033CA /* AMBNativeAd.swift */,
+				F1D9E133EE0046FE9FA124B5 /* AMBPlugin.swift */,
+				406F02A2AB4C46D08D0C596F /* AMBRewarded.swift */,
+				3A3D5FAE6FBA4712BAA5B8B3 /* AMBRewardedInterstitial.swift */,
+				3644676283D34D9787C0E851 /* CDVNotification.m */,
+				5DFEFBE3B76D4B929FECD648 /* CDVNotification.h */,
+				8CC511427BEE4C68AF3ADEA2 /* NativeStorage.m */,
+				D2BF9292C43B402194C950B2 /* NativeStorage.h */,
+				879D041D15F343D7A6347773 /* CDVAppRate.m */,
+				C08968FDD1DC486795766297 /* CDVAppRate.h */,
+				4E8C5E3C9D90465D842943FF /* CDVDevice.m */,
+				37564BDB06844741AB742566 /* CDVDevice.h */,
+				DFA6C88B04DA4F58985F2ADF /* CDVLocation.m */,
+				FAFF477590F542AD9A9E754D /* CDVLocation.h */,
+				3B3B46A0880C4DAC8DED9E61 /* IdfaPlugin.m */,
+				FB7038B2EF87497B9265D13A /* IdfaPlugin.h */,
+				464BCE2D3B344D018D487051 /* CDVInAppBrowserOptions.m */,
+				DDD1415C9B47432F8D9CB7CB /* CDVInAppBrowserNavigationController.m */,
+				4E8FA6E54D11494EA4209F58 /* CDVWKInAppBrowser.m */,
+				0306D962EA484AD5A5C96564 /* CDVWKInAppBrowserUIDelegate.m */,
+				93DD22B0F1244F86B4B454B4 /* CDVInAppBrowserOptions.h */,
+				9BEFCDFE6872402BBF6F684E /* CDVInAppBrowserNavigationController.h */,
+				726F3F3E224241ACBEF06280 /* CDVWKInAppBrowser.h */,
+				87EB32A61C1041458BDA4A35 /* CDVWKInAppBrowserUIDelegate.h */,
+				E490DB8B03C048E9B1DF9D82 /* InAppPurchase.m */,
+				DDD41EEA35524ABA838900C0 /* SKProduct+LocalizedPrice.m */,
+				310582F19EB2445EAEC78D71 /* SKProductDiscount+LocalizedPrice.m */,
+				1315DC787C5349EB8E3CFC8B /* FileUtility.m */,
+				DBCD164AE4E847EF8D658FC1 /* InAppPurchase.h */,
+				3D52B38676C94A0989B431D9 /* SKProduct+LocalizedPrice.h */,
+				AFB35ABC18C34BB9B665427F /* SKProductDiscount+LocalizedPrice.h */,
+				B68C262BABB1415D9B3B556C /* FileUtility.h */,
+				ACCCA521F3AC4428B21C5352 /* CDVWKWebViewFileXhr.m */,
+				AACA9F53F864409B9CD96037 /* CDVWKWebViewFileXhr.h */,
+			);
+			name = Plugins;
+			path = "JTA Bus Tracker/Plugins";
+			sourceTree = SOURCE_ROOT;
+		};
+		DF6856D06D516EFE22D9EFF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17B5B841F3B79BB09D7B9986 /* Pods-JTA Bus Tracker.debug.xcconfig */,
+				88FAB70B325C6BC35CAEE107 /* Pods-JTA Bus Tracker.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB87FDF11871DA420020F90C /* Staging */ = {
+			isa = PBXGroup;
+			children = (
+				F840E1F0165FE0F500CFE078 /* config.xml */,
+				301BF56E109A69640062928A /* www */,
+			);
+			name = Staging;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* JTA Bus Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "JTA Bus Tracker" */;
+			buildPhases = (
+				28A5DD30ABF46E771CF7652C /* [CP] Check Pods Manifest.lock */,
+				857339E32710CC9700A1C74C /* Copy Staging Resources */,
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				BC714901E5BDA54606AEE054 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				301BF551109A68C00062928A /* PBXTargetDependency */,
+			);
+			name = "JTA Bus Tracker";
+			productName = "JTA Bus Tracker";
+			productReference = 1D6058910D05DD3D006BFB54 /* JTA Bus Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1130;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "JTA Bus Tracker" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 301BF52E109A57CC0062928A /* Products */;
+					ProjectRef = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* JTA Bus Tracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		301BF535109A57CC0062928A /* libCordova.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCordova.a;
+			remoteRef = 301BF534109A57CC0062928A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		907D8124214C687600058A10 /* Cordova.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cordova.framework;
+			remoteRef = 907D8123214C687600058A10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
+				0207DA581B56EA530066E2B4 /* Assets.xcassets in Resources */,
+				90B630EF2AECBBD0009EF368 /* PrivacyInfo.xcprivacy in Resources */,
+				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				26D102EF4DCB4BEF978F1B8E /* CDVNotification.bundle in Resources */,
+				6FD14D73CB884EFC912A6181 /* CDVDevice.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28A5DD30ABF46E771CF7652C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JTA Bus Tracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC714901E5BDA54606AEE054 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JTA Bus Tracker/Pods-JTA Bus Tracker-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JTA Bus Tracker/Pods-JTA Bus Tracker-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JTA Bus Tracker/Pods-JTA Bus Tracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
+				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				7A27259EE16B4C48885A3010 /* AMBAdBase.swift in Sources */,
+				DD75DD8695F84096AE32E524 /* AMBAppOpenAd.swift in Sources */,
+				118E7CEF7E9D4464AE2165BE /* AMBBanner.swift in Sources */,
+				E8A5E404B1684D0CA7925CEE /* AMBContext.swift in Sources */,
+				E56B3EDF905443A09D1B708B /* AMBCore.swift in Sources */,
+				0767D66198FD486F8770DB45 /* AMBGenerated.swift in Sources */,
+				04D627A2C90D432C8F661CCE /* AMBInterstitial.swift in Sources */,
+				055D49179DD34A38A2F18256 /* AMBNativeAd.swift in Sources */,
+				43867E46A4744B9BAC5FACC4 /* AMBPlugin.swift in Sources */,
+				981B1F2C2DA94CAD8ED53DD0 /* AMBRewarded.swift in Sources */,
+				75F7ADA07D1546308EBCC858 /* AMBRewardedInterstitial.swift in Sources */,
+				DEEA330B23554DF7A87B6807 /* CDVNotification.m in Sources */,
+				E681A90CC1794FD684CB3980 /* NativeStorage.m in Sources */,
+				86A83E7D085349198F21A3CC /* CDVAppRate.m in Sources */,
+				DF48A7B7AE344746A2DFC67C /* CDVDevice.m in Sources */,
+				54A94863E3EF45CA9500627D /* CDVLocation.m in Sources */,
+				3535598B1313405F9FD20286 /* IdfaPlugin.m in Sources */,
+				F2875CEB425F4FB8A5251649 /* CDVInAppBrowserOptions.m in Sources */,
+				3F78AD2B546E45DA8C6C0DF6 /* CDVInAppBrowserNavigationController.m in Sources */,
+				DA2AE5AF43404A2093FE68E7 /* CDVWKInAppBrowser.m in Sources */,
+				BA1E881F3D464082B9344AFC /* CDVWKInAppBrowserUIDelegate.m in Sources */,
+				201A1345700B48BBBD5C81C9 /* InAppPurchase.m in Sources */,
+				7639E99D36494C67BBD15792 /* SKProduct+LocalizedPrice.m in Sources */,
+				939404DB4D7543228EECD11A /* SKProductDiscount+LocalizedPrice.m in Sources */,
+				A3DCB144FB77439CB1110E4E /* FileUtility.m in Sources */,
+				F0A102E4F801417B93D79C31 /* CDVWKWebViewFileXhr.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		301BF551109A68C00062928A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CordovaLib;
+			targetProxy = 301BF550109A68C00062928A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A50F1AB8059700498E2A /* build-debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/$(PROJECT_NAME)/Entitlements-$(CONFIGURATION).plist";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTA Bus Tracker/JTA Bus Tracker-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "JTA Bus Tracker/JTA Bus Tracker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacksonville.free;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A5101AB8059700498E2A /* build-release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/$(PROJECT_NAME)/Entitlements-$(CONFIGURATION).plist";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JTA Bus Tracker/JTA Bus Tracker-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "JTA Bus Tracker/JTA Bus Tracker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacksonville.free;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A5111AB8059700498E2A /* build.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MERGED_BINARY_TYPE = automatic;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WK_WEB_VIEW_ONLY = 1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A5111AB8059700498E2A /* build.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MERGED_BINARY_TYPE = automatic;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WK_WEB_VIEW_ONLY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "JTA Bus Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "JTA Bus Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
