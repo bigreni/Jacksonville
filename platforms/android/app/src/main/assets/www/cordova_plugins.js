@@ -1,41 +1,11 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
   module.exports = [
     {
-      "id": "cordova-plugin-device.device",
-      "file": "plugins/cordova-plugin-device/www/device.js",
-      "pluginId": "cordova-plugin-device",
+      "id": "admob-plus-cordova.AdMob",
+      "file": "plugins/admob-plus-cordova/www/admob.js",
+      "pluginId": "admob-plus-cordova",
       "clobbers": [
-        "device"
-      ]
-    },
-    {
-      "id": "cordova-plugin-geolocation.geolocation",
-      "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
-      "pluginId": "cordova-plugin-geolocation",
-      "clobbers": [
-        "navigator.geolocation"
-      ]
-    },
-    {
-      "id": "cordova-plugin-geolocation.PositionError",
-      "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
-      "pluginId": "cordova-plugin-geolocation",
-      "runs": true
-    },
-    {
-      "id": "cordova-plugin-idfa.Idfa",
-      "file": "plugins/cordova-plugin-idfa/www/Idfa.js",
-      "pluginId": "cordova-plugin-idfa",
-      "merges": [
-        "cordova.plugins.idfa"
-      ]
-    },
-    {
-      "id": "cordova-plugin-inappbrowser.inappbrowser",
-      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-      "pluginId": "cordova-plugin-inappbrowser",
-      "clobbers": [
-        "cordova.InAppBrowser.open"
+        "admob"
       ]
     },
     {
@@ -94,24 +64,64 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "runs": true
     },
     {
-      "id": "admob-plus-cordova.AdMob",
-      "file": "plugins/admob-plus-cordova/www/admob.js",
-      "pluginId": "admob-plus-cordova",
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
       "clobbers": [
-        "admob"
+        "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.geolocation",
+      "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "navigator.geolocation"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.PositionError",
+      "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "runs": true
+    },
+    {
+      "id": "cordova-plugin-idfa.Idfa",
+      "file": "plugins/cordova-plugin-idfa/www/Idfa.js",
+      "pluginId": "cordova-plugin-idfa",
+      "merges": [
+        "cordova.plugins.idfa"
+      ]
+    },
+    {
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
+      "clobbers": [
+        "cordova.InAppBrowser.open"
+      ]
+    },
+    {
+      "id": "cordova-plugin-purchase.CdvPurchase",
+      "file": "plugins/cordova-plugin-purchase/www/store.js",
+      "pluginId": "cordova-plugin-purchase",
+      "clobbers": [
+        "store",
+        "CdvPurchase"
       ]
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-device": "2.1.0",
-    "cordova-plugin-geolocation": "4.1.0",
-    "cordova-support-android-plugin": "2.0.4",
-    "cordova-plugin-idfa": "2.1.0",
-    "cordova-plugin-inappbrowser": "5.0.0",
-    "cordova-plugin-wkwebview-file-xhr": "3.1.0",
+    "admob-plus-cordova": "2.0.0-alpha.18",
     "cordova-plugin-dialogs": "2.0.2",
     "cordova-plugin-nativestorage": "2.3.2",
-    "cordova-plugin-apprate": "1.7.2",
-    "admob-plus-cordova": "1.28.0"
+    "cordova-plugin-apprate": "1.8.0",
+    "cordova-plugin-device": "3.0.0",
+    "cordova-plugin-geolocation": "5.0.0",
+    "cordova-support-android-plugin": "2.0.4",
+    "cordova-plugin-idfa": "3.0.0",
+    "cordova-plugin-inappbrowser": "6.0.0",
+    "cordova-plugin-purchase": "13.11.1",
+    "cordova-plugin-wkwebview-file-xhr": "3.1.1"
   };
 });

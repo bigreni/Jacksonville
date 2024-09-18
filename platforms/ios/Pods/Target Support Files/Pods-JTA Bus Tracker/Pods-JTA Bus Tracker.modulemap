@@ -1,6 +1,0 @@
-framework module Pods_JTA_Bus_Tracker {
-  umbrella header "Pods-JTA Bus Tracker-umbrella.h"
-
-  export *
-  module * { export * }
-}

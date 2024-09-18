@@ -84,7 +84,27 @@ h4.selectLanguage {
     color: white;
 }
 
+#tblResults {
+    background-color: #e3474f;
+    color: #FFF;
+    margin: 0 2vw 0 2vw;
+    border:0; 
+    width: 96vw;
+    height: 100%;
+}
 
+td.spacer {
+    background-color: #202020;
+    height: 5px;
+}
+
+tr.header{
+    color: #f6e806;
+}
+
+tr.predictions{
+    font-size: large;
+}
 
 h3 {
 margin: 0;

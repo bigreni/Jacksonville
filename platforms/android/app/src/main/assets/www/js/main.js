@@ -1,5 +1,7 @@
+    var interstitial;
+    
     function onLoad() {
-        if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
+        if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent)) || (navigator.userAgent.includes("Mac") && "ontouchend" in document))  {
             document.addEventListener('deviceready', checkFirstUse, false);
         } else {
             notFirstUse();
@@ -60,7 +62,7 @@
         if ((/(android|windows phone)/i.test(navigator.userAgent))) {
             AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: true, autoShow: false });
             //document.getElementById("screen").style.display = 'none';     
-        } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))) {
+        } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))|| (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
             AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: true, autoShow: false });
             //document.getElementById("screen").style.display = 'none';     
         } else
@@ -71,29 +73,52 @@
 
    function checkFirstUse()
     {
-        alert('1');
         $("span").remove();
-        alert('2');
         $(".dropList").select2();
-        //initApp();
-        alert('3');
+        initApp1();
         checkPermissions();
-        alert('4');
+        checkAdStatus();
+        //document.getElementById('screen').style.display = 'none';     
         askRating();
-        alert('5');
-        document.getElementById('screen').style.display = 'none';     
+
     }
 
     function notFirstUse()
     {
         $("span").remove();
         $(".dropList").select2();
+        checkAdStatus();
         document.getElementById("screen").style.display = 'none';     
+    }
+
+    function checkAdStatus()
+    {
+        var showad = localStorage.getItem("numUses");
+        if (showad == null)
+        {
+            var favStop = localStorage.getItem("Favorites");
+            if (favStop != null)
+            {
+                localStorage.setItem("numUses", "10");
+            }
+            else
+            {
+                localStorage.setItem("numUses", "1");
+            }
+        }
+        else if(parseInt(showad) < 10)
+        {
+            showad = parseInt(showad) + 1;
+            localStorage.setItem("numUses", showad);
+        }    
     }
 
 function loadFaves()
 {
-    showAd();
+    //showAd();
+    var adshow = localStorage.getItem("numUses");
+    if(parseInt(adshow) >= 10)
+        showAd1();
     window.location = "Favorites.html";
 }
 
@@ -119,7 +144,8 @@ function checkPermissions(){
     
 function askRating()
 {
-    cordova.plugins.AppRate.setPreferences = {
+    const appRatePlugin = AppRate;
+    appRatePlugin.setPreferences({
         reviewType: {
             ios: 'AppStoreReview',
             android: 'InAppBrowser'
@@ -128,10 +154,10 @@ function askRating()
   usesUntilPrompt: 10,
   promptAgainForEachNewVersion: true,
   storeAppURL: {
-                ios: '1296111737',
+                ios: '6444600493',
                 android: 'market://details?id=com.jacksonville.free'
                }
-};
+});
  
 AppRate.promptForRating(false);
 }
@@ -139,7 +165,7 @@ AppRate.promptForRating(false);
 function showAd()
 {
     document.getElementById("screen").style.display = 'block';     
-    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
+    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent)) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
         AdMob.isInterstitialReady(function(isready){
             if(isready) 
                 AdMob.showInterstitial();
@@ -213,6 +239,7 @@ function loadStops() {
                   var numDirections = msg['route'].direction;
                   var arrStops = [];
                       $.each(numStops, function (index, item) {
+                        if(item.stopId != null)
                           $(stopList).append($("<option />").val(item.stopId).text(item.title));
                       });
                   if (numDirections.length != null) {
@@ -245,7 +272,9 @@ function loadStops() {
 function loadArrivals() {
     var outputContainer = $('.js-next-bus-results');
     var results = "";
-
+    var adshow = localStorage.getItem("numUses");
+    if(parseInt(adshow) >= 10)
+        showAd1();
     $.ajax(
           {
               type: "GET",
@@ -262,34 +291,48 @@ function loadArrivals() {
                   else {
                       var direction = output['predictions'].direction;
                       results = results.concat("<p><strong>" + $("#routeSelect option:selected").text() + " - " + $("#routeStopSelect option:selected").text() + "</strong></p>");
+                      results = results.concat('<table id="tblResults" cellpadding="0" cellspacing="0">')
+                      results = results.concat('<tr class="header"><th>ROUTE</th><th>ARRIVAL</th></tr><tr><td class="spacer" colspan="2"></td></tr>');
                       if (direction == null) {
                           results = results.concat("<p> No upcoming arrivals.</p>");
                       }
                       else if (direction.length == null) {
                           if (output['predictions'].direction.prediction.length > 1) {
                               $.each(output['predictions'].direction.prediction, function (index, item) {
-                                  results = results.concat("<p>" + output['predictions'].direction.title + " - "  + item.minutes + " minutes </p>");
-                              });
+                                  //results = results.concat("<p>" + output['predictions'].direction.title + " - "  + item.minutes + " minutes </p>");
+                                  results = results.concat('<tr class="predictions">');
+                              results = results.concat("<td>" + output['predictions'].direction.title + "</td>"  + "<td>" + item.minutes + " minutes</td>");
+                              results = results.concat('</tr><tr><td class="spacer" colspan="2"></td></tr>');
+                            });
                           }
                           else {
-                              results = results.concat("<p>" + output['predictions'].direction.title + " - "  + output['predictions'].direction.prediction.minutes + " minutes </p>");
-                          }
+                            //   results = results.concat("<p>" + output['predictions'].direction.title + " - "  + output['predictions'].direction.prediction.minutes + " minutes </p>");
+                              results = results.concat('<tr class="predictions">');
+                              results = results.concat("<td>" + output['predictions'].direction.title + "</td>"  + "<td>" + output['predictions'].direction.prediction.minutes + " minutes</td></tr>");
+                            }
                       }
                       else{
-                            $.each(output['predictions'].direction, function (count, d) {
+                        $.each(output['predictions'].direction, function (count, d) {
                                 if (d.prediction.length > 1) {
                                     $.each(d.prediction, function (index, item) {
-                                    results = results.concat("<p>" + d.title + " - " + item.minutes + " minutes </p>");
+                                    //results = results.concat("<p>" + d.title + " - " + item.minutes + " minutes </p>");
+                                    results = results.concat('<tr class="predictions">');
+                                    results = results.concat("<td>" + d.title + "</td>"  + "<td>" + item.minutes  + " minutes</td>");
+                                    results = results.concat('</tr><tr><td class="spacer" colspan="2"></td></tr>');
                                     });
                                 }
                                 else {
-                                    results = results.concat("<p>" + d.title + " - " + d.prediction.minutes + " minutes </p>");
+                                    //results = results.concat("<p>" + d.title + " - " + d.prediction.minutes + " minutes </p>");
+                                    results = results.concat('<tr class="predictions">');
+                                    results = results.concat("<td>" + d.title + "</td>"  + "<td>" + d.prediction.minutes + " minutes</td></tr>");
+                                    
                                 }
                               });                          
                       }
                       if (results == "") {
                           results = results.concat("<p> No upcoming arrivals.</p>");
                       }
+                      results = results + "</table>";
                       $(outputContainer).html(results).show();
                       document.getElementById('btnSave').style.visibility = "visible";
                   }
@@ -316,4 +359,51 @@ function saveFavorites()
         }
         localStorage.setItem("Favorites", favStop);
         $("#message").text('Stop added to favorites!!');
+}
+
+function initApp1()
+{
+    if (/(android)/i.test(navigator.userAgent)){
+    interstitial = new admob.InterstitialAd({
+        //dev
+        //adUnitId: 'ca-app-pub-3940256099942544/1033173712'
+        //prod
+        adUnitId: 'ca-app-pub-9249695405712287/5352871863'
+      });
+    }
+    else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+        interstitial = new admob.InterstitialAd({
+            //dev
+            //adUnitId: 'ca-app-pub-3940256099942544/4411468910'
+            //prod
+            adUnitId: 'ca-app-pub-9249695405712287/9413984920'
+          });
+    }
+    registerAdEvents1();
+    interstitial.load();
+}
+
+function registerAdEvents1() {
+    // new events, with variable to differentiate: adNetwork, adType, adEvent
+    document.addEventListener('admob.ad.load', function (data) {
+        document.getElementById("screen").style.display = 'none';     
+    });
+    document.addEventListener('admob.ad.loadfail', function (data) {
+        document.getElementById("screen").style.display = 'none';     
+    });
+    document.addEventListener('admob.ad.show', function (data) { 
+        document.getElementById("screen").style.display = 'none';     
+    });
+    document.addEventListener('admob.ad.dismiss', function (data) {
+       document.getElementById("screen").style.display = 'none';     
+    });
+}
+
+function showAd1()
+{
+    document.getElementById("screen").style.display = 'block';     
+    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
+        interstitial.show();
+    }
+    document.getElementById("screen").style.display = 'none'; 
 }
