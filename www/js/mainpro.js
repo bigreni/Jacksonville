@@ -108,9 +108,11 @@ function loadDirections() {
     $.ajax(
           {
               type: "GET",
-              url: "https://retro.umoiq.com/service/publicJSONFeed",
-              data: "command=routeConfig&a=jtafla&r=" + $("#routeSelect").val(),
+              url: "https://ride.jtafla.com/route-trips/" + $("#routeSelect").val() + "/" + "9-19-2024",
+              //data: "command=routeConfig&a=jtafla&r=" + $("#routeSelect").val(),
               //contentType: "application/json;	charset=utf-8",
+              headers: {
+                "Tenantid": "b9eaf028-cbd0-449b-9704-11bb0140d55f"},
               dataType: "json",
               success: function (msg) {
                   if (msg == null || msg.length == 0) {
