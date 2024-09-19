@@ -1,0 +1,339 @@
+    var interstitial;
+    
+    function onLoad() {
+        if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent)) || (navigator.userAgent.includes("Mac") && "ontouchend" in document))  {
+            document.addEventListener('deviceready', checkFirstUse, false);
+        } else {
+            notFirstUse();
+        }
+    }
+
+   function checkFirstUse()
+    {
+        $("span").remove();
+        $(".dropList").select2();
+        initApp();
+        checkPermissions();
+        //checkAdStatus();
+        //document.getElementById('screen').style.display = 'none';     
+        askRating();
+
+    }
+
+    function notFirstUse()
+    {
+        $("span").remove();
+        $(".dropList").select2();
+        //checkAdStatus();
+        document.getElementById("screen").style.display = 'none';     
+    }
+
+    function checkAdStatus()
+    {
+        var showad = localStorage.getItem("numUses");
+        if (showad == null)
+        {
+            var favStop = localStorage.getItem("Favorites");
+            if (favStop != null)
+            {
+                localStorage.setItem("numUses", "10");
+            }
+            else
+            {
+                localStorage.setItem("numUses", "1");
+            }
+        }
+        else if(parseInt(showad) < 10)
+        {
+            showad = parseInt(showad) + 1;
+            localStorage.setItem("numUses", showad);
+        }    
+    }
+
+function loadFaves()
+{
+    //showAd();
+    //var adshow = localStorage.getItem("numUses");
+    //if(parseInt(adshow) >= 10)
+    showAd();
+    window.location = "Favorites.html";
+}
+
+function checkPermissions(){
+    const idfaPlugin = cordova.plugins.idfa;
+
+    idfaPlugin.getInfo()
+        .then(info => {
+            if (!info.trackingLimited) {
+                return info.idfa || info.aaid;
+            } else if (info.trackingPermission === idfaPlugin.TRACKING_PERMISSION_NOT_DETERMINED) {
+                return idfaPlugin.requestPermission().then(result => {
+                    if (result === idfaPlugin.TRACKING_PERMISSION_AUTHORIZED) {
+                        return idfaPlugin.getInfo().then(info => {
+                            return info.idfa || info.aaid;
+                        });
+                    }
+                });
+            }
+        });
+}
+ 
+    
+function askRating()
+{
+    const appRatePlugin = AppRate;
+    appRatePlugin.setPreferences({
+        reviewType: {
+            ios: 'AppStoreReview',
+            android: 'InAppBrowser'
+            },
+  useLanguage:  'en',
+  usesUntilPrompt: 10,
+  promptAgainForEachNewVersion: true,
+  storeAppURL: {
+                ios: '6444600493',
+                android: 'market://details?id=com.jacksonville.free'
+               }
+});
+ 
+AppRate.promptForRating(false);
+}
+
+function loadDirections() {
+    $('.js-next-bus-results').html('').hide(); // reset output container's html
+    document.getElementById('btnSave').style.visibility = "hidden";
+    $("#routeStopSelect").attr("disabled", "");
+    $("#routeStopSelect").val('0');
+    $("#message").text('');
+    $.ajax(
+          {
+              type: "GET",
+              url: "https://retro.umoiq.com/service/publicJSONFeed",
+              data: "command=routeConfig&a=jtafla&r=" + $("#routeSelect").val(),
+              //contentType: "application/json;	charset=utf-8",
+              dataType: "json",
+              success: function (msg) {
+                  if (msg == null || msg.length == 0) {
+                      return;
+                  }
+
+                  var list = $("#routeDirectionSelect");
+                  $(list).empty();
+                  $(list).append($("<option disabled/>").val("0").text("- Select Direction -"));
+                  var numDirections = msg['route'].direction;
+                  if (numDirections.length == null) {
+                      $(list).append($("<option />").val(numDirections.name).text(numDirections.title));
+                  }
+                  else {
+                      $.each(numDirections, function (index, item) {
+                          $(list).append($("<option />").val(item.name).text(item.title));
+                      });
+                  }
+                  $(list).removeAttr('disabled');
+                  $(list).val('0');
+              },
+              error: function () {
+              }
+          }
+        );
+        $("span").remove();
+        $(".dropList").select2();
+    }
+
+
+function loadStops() {
+    $('.js-next-bus-results').html('').hide(); // reset output container's html
+    document.getElementById('btnSave').style.visibility = "hidden";
+    $("#message").text('');
+    $.ajax(
+          {
+              type: "GET",
+              url: "https://retro.umoiq.com/service/publicJSONFeed",
+              data: "command=routeConfig&a=jtafla&r=" + $("#routeSelect").val(),
+              //contentType: "application/json;	charset=utf-8",
+              dataType: "json",
+              success: function (msg) {
+                  if (msg == null || msg.length == 0) {
+                      return;
+                  }
+                  var stopList = $("#routeStopSelect");
+                  $(stopList).empty();
+                  $(stopList).append($("<option disabled/>").val("0").text("- Select Stop -"));
+                  var numStops = msg['route'].stop;
+                  var numDirections = msg['route'].direction;
+                  var arrStops = [];
+                      $.each(numStops, function (index, item) {
+                        if(item.stopId != null)
+                          $(stopList).append($("<option />").val(item.stopId).text(item.title));
+                      });
+                  if (numDirections.length != null) {
+                      $.each(numDirections, function (index, item) {
+                          if ($("#routeDirectionSelect").val() == item.name) {
+                              for (var x in item.stop) {
+                                  arrStops.push(item.stop[x].tag);
+                              }
+                              $("#routeStopSelect option").each(function () {
+                                  if (arrStops.indexOf(this.value) == -1 && this.value !=0) {
+                                      //alert(item.stop.indexOf(this.value));
+                                      $("#routeStopSelect option[value='" + this.value + "']").remove();
+                                  }
+                              });
+                          }
+                      });
+                     }
+                  $(stopList).removeAttr('disabled');
+                  $(stopList).val('0');
+
+              },
+              error: function () {
+              }
+          }
+        );
+        $("span").remove();
+        $(".dropList").select2();
+}
+
+function loadArrivals() {
+    var outputContainer = $('.js-next-bus-results');
+    var results = "";
+    var adshow = localStorage.getItem("numUses");
+    if(parseInt(adshow) >= 10)
+        showAd();
+    $.ajax(
+          {
+              type: "GET",
+              url: "https://retro.umoiq.com/service/publicJSONFeed",
+              data: "command=predictions&a=jtafla&r=" + $("#routeSelect").val() + "&s=" + $("#routeStopSelect").val(),
+              //contentType: "application/json;	charset=utf-8",
+              dataType: "json",
+              success: function (output) {
+                  if (output == null || output.length == 0) {
+                      $(outputContainer).html('').hide(); // reset output container's html
+                      document.getElementById('btnSave').style.visibility = "hidden";
+                  }
+
+                  else {
+                      var direction = output['predictions'].direction;
+                      results = results.concat("<p><strong>" + $("#routeSelect option:selected").text() + " - " + $("#routeStopSelect option:selected").text() + "</strong></p>");
+                      results = results.concat('<table id="tblResults" cellpadding="0" cellspacing="0">')
+                      results = results.concat('<tr class="header"><th>ROUTE</th><th>ARRIVAL</th></tr><tr><td class="spacer" colspan="2"></td></tr>');
+                      if (direction == null) {
+                          results = results.concat("<p> No upcoming arrivals.</p>");
+                      }
+                      else if (direction.length == null) {
+                          if (output['predictions'].direction.prediction.length > 1) {
+                              $.each(output['predictions'].direction.prediction, function (index, item) {
+                                  //results = results.concat("<p>" + output['predictions'].direction.title + " - "  + item.minutes + " minutes </p>");
+                                  results = results.concat('<tr class="predictions">');
+                              results = results.concat("<td>" + output['predictions'].direction.title + "</td>"  + "<td>" + item.minutes + " minutes</td>");
+                              results = results.concat('</tr><tr><td class="spacer" colspan="2"></td></tr>');
+                            });
+                          }
+                          else {
+                            //   results = results.concat("<p>" + output['predictions'].direction.title + " - "  + output['predictions'].direction.prediction.minutes + " minutes </p>");
+                              results = results.concat('<tr class="predictions">');
+                              results = results.concat("<td>" + output['predictions'].direction.title + "</td>"  + "<td>" + output['predictions'].direction.prediction.minutes + " minutes</td></tr>");
+                            }
+                      }
+                      else{
+                        $.each(output['predictions'].direction, function (count, d) {
+                                if (d.prediction.length > 1) {
+                                    $.each(d.prediction, function (index, item) {
+                                    //results = results.concat("<p>" + d.title + " - " + item.minutes + " minutes </p>");
+                                    results = results.concat('<tr class="predictions">');
+                                    results = results.concat("<td>" + d.title + "</td>"  + "<td>" + item.minutes  + " minutes</td>");
+                                    results = results.concat('</tr><tr><td class="spacer" colspan="2"></td></tr>');
+                                    });
+                                }
+                                else {
+                                    //results = results.concat("<p>" + d.title + " - " + d.prediction.minutes + " minutes </p>");
+                                    results = results.concat('<tr class="predictions">');
+                                    results = results.concat("<td>" + d.title + "</td>"  + "<td>" + d.prediction.minutes + " minutes</td></tr>");
+                                    
+                                }
+                              });                          
+                      }
+                      if (results == "") {
+                          results = results.concat("<p> No upcoming arrivals.</p>");
+                      }
+                      results = results + "</table>";
+                      $(outputContainer).html(results).show();
+                      document.getElementById('btnSave').style.visibility = "visible";
+                  }
+              }
+          });
+}
+
+function saveFavorites()
+{
+    var favStop = localStorage.getItem("Favorites");
+    var newFave = $('#routeSelect option:selected').val() + ">" + $("#routeStopSelect option:selected").val() + ":" + $('#routeSelect option:selected').text() + " > " + $("#routeDirectionSelect option:selected").text() + " > " + $("#routeStopSelect option:selected").text();
+        if (favStop == null)
+        {
+            favStop = newFave;
+        }   
+        else if(favStop.indexOf(newFave) == -1)
+        {
+            favStop = favStop + "|" + newFave;               
+        }
+        else
+        {
+            $("#message").text('Stop is already favorited!!');
+            return;
+        }
+        localStorage.setItem("Favorites", favStop);
+        $("#message").text('Stop added to favorites!!');
+}
+
+function initApp()
+{
+    if (/(android)/i.test(navigator.userAgent)){
+    interstitial = new admob.InterstitialAd({
+        //dev
+        adUnitId: 'ca-app-pub-3940256099942544/1033173712'
+        //prod
+        //adUnitId: 'ca-app-pub-9249695405712287/5352871863'
+      });
+    }
+    else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+        interstitial = new admob.InterstitialAd({
+            //dev
+            //adUnitId: 'ca-app-pub-3940256099942544/4411468910'
+            //prod
+            adUnitId: 'ca-app-pub-9249695405712287/9413984920'
+          });
+    }
+    registerAdEvents();
+    interstitial.load();
+}
+
+function registerAdEvents() {
+    // new events, with variable to differentiate: adNetwork, adType, adEvent
+    document.addEventListener('admob.ad.load', function (data) {
+        document.getElementById("screen").style.display = 'none';     
+    });
+    document.addEventListener('admob.ad.loadfail', function (data) {
+        document.getElementById("screen").style.display = 'none';     
+    });
+    document.addEventListener('admob.ad.show', function (data) { 
+        document.getElementById("screen").style.display = 'none';     
+    });
+    document.addEventListener('admob.ad.dismiss', function (data) {
+       document.getElementById("screen").style.display = 'none';     
+    });
+}
+
+function showAd()
+{
+    document.getElementById("screen").style.display = 'block';     
+    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent)) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
+        interstitial.show();
+    }
+    document.getElementById("screen").style.display = 'none'; 
+}
+
+function proSubscription()
+{
+    window.location = "Subscription.html";
+    //myProduct.getOffer().order();
+}
